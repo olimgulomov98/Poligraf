@@ -1,0 +1,104 @@
+/** Footer **/
+
+.footer {
+  width: 100%;
+  height: 358px;
+  background: #181818;
+  margin-top: 150px;
+  padding: 48px 111px;
+}
+
+.footer .footer-logo {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 24px;
+}
+
+.footer .footer-logo img {
+  width: 160px;
+  height: 87.31px;
+  margin-bottom: 24px;
+}
+
+.footer .footer-frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer .footer-frame h4 {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #fff;
+}
+
+.footer .footer-frame h3 {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #fff;
+  margin: 12px 0 24px 0;
+}
+
+.footer .footer-frame .footer-btn {
+  width: 176px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff;
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.26px;
+  color: #181818;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.footer .footer-frame .arrowRight-icon {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer .footer-frame .footer-boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-left: 50px;
+}
+
+.footer .footer-frame .footer-boxes .footer-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-frame h2 {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.5px;
+  color: #fff;
+  margin: 24px 0 22px 55px;
+}
+
+.footer .footer-frame .email-frame {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.footer .footer-frame .email-frame h5 {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #fff;
+}

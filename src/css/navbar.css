@@ -1,0 +1,72 @@
+/** Navbar **/
+
+.navbar {
+  width: 100%;
+  height: 97px;
+  max-width: 1450px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.navbar .navbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  margin-top: 15px;
+}
+
+.navbar .navbar-container .links {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.navbar .navbar-container .hover-line a {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.26px;
+  z-index: 100;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.navbar .navbar-container .navbar-right-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.navbar .navbar-container .navbar-right-frame .navbar-lang {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.26px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.navbar .navbar-container .navbar-right-frame .navbar-btn {
+  width: 176px;
+  height: 44px;
+  border-radius: 12px;
+  background: #181818;
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.26px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: none;
+}
