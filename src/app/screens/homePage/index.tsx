@@ -4,7 +4,6 @@ import Services from "./Services";
 import Portfolio from "./Portfolio";
 import Numbers from "./Numbers";
 import Partners from "./Partners";
-import Client from "./Client";
 import "../../../css/home.css";
 
 export default function HomePage() {
@@ -16,7 +15,6 @@ export default function HomePage() {
       <Portfolio />
       <Numbers />
       <Partners />
-      <Client />
     </div>
   );
 }

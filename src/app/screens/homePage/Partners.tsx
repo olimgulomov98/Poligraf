@@ -3,18 +3,18 @@ import { Box, Stack, Typography } from "@mui/material";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
 
 const partnersItems = [
-  { img: "/img/hamkor-logo1.png" },
-  { img: "/img/hamkor-logo2.png" },
-  { img: "/img/hamkor-logo3.png" },
-  { img: "/img/hamkor-logo4.png" },
-  { img: "/img/hamkor-logo5.png" },
-  { img: "/img/hamkor-logo6.png" },
-  { img: "/img/hamkor-logo7.png" },
-  { img: "/img/hamkor-logo8.png" },
-  { img: "/img/hamkor-logo9.png" },
-  { img: "/img/hamkor-logo10.png" },
-  { img: "/img/hamkor-logo10.png" },
-  { img: "/img/hamkor-logo10.png" },
+  { img: "/img/vivo.png" },
+  { img: "/img/zikki.png" },
+  { img: "/img/adim.png" },
+  { img: "/img/zaminmix.png" },
+  { img: "/img/almaz.png" },
+  { img: "/img/dori.png" },
+  { img: "/img/arex.png" },
+  { img: "/img/atx.png" },
+  { img: "/img/best.png" },
+  { img: "/img/gtg.png" },
+  { img: "/img/gtg.png" },
+  { img: "/img/gtg.png" },
 ];
 
 const itemsPerPage = 10;

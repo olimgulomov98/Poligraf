@@ -1,0 +1,304 @@
+/** About **/
+
+.about-page {
+  width: 100%;
+  height: auto;
+}
+
+.about-page .title {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 78.4px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #181818;
+  margin: 120px 0 16px 0;
+}
+
+.about-page .paragraph {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: center;
+  color: #848484;
+}
+
+/** Numbers **/
+
+.about-page .numbers {
+  width: 100%;
+  height: 319px;
+  padding: 0 79px;
+  margin-top: 140px;
+}
+
+.about-page .numbers h1 {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 69.33px;
+  text-align: center;
+  color: #181818;
+  margin: 0 0 56px 0;
+}
+
+.about-page .numbers .numbers-frame {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.about-page .numbers .numbers-frame .box-frame {
+  width: 406px;
+  height: 194px;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  background: #f9f9f9;
+  padding: 40px 32px;
+}
+
+.about-page .numbers .numbers-frame .box-frame h3 {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.26px;
+  margin: 0;
+  color: #848484;
+}
+
+.about-page .numbers .numbers-frame .box-frame p {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 78.4px;
+  color: #181818;
+  margin: 12px 0;
+}
+
+/** Values **/
+
+.about-page .values {
+  width: 100%;
+  height: 319px;
+  padding: 0 79px;
+  margin-top: 140px;
+}
+
+.about-page .values h1 {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 69.33px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #181818;
+  margin: 0 0 56px 0;
+}
+
+.about-page .values .values-frame {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.about-page .values .values-frame .box-frame {
+  width: 404px;
+  height: 268px;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  background: #f9f9f9;
+  padding: 32px;
+}
+
+.about-page .values .values-frame .box-frame h3 {
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.71px;
+  color: #181818;
+  margin: 0;
+}
+
+.about-page .values .values-frame .box-frame .box-parag {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #848484;
+  margin: 10px 0 32px 0;
+}
+
+.about-page .values .values-frame .box-frame .box-parag1 {
+  margin: 10px 0 56px 0 !important;
+}
+
+.about-page .values .values-frame .box-frame .box-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/** Partners **/
+
+.about-page .partners {
+  width: 100%;
+  height: auto;
+  padding: 0 80px;
+  margin-top: 200px;
+}
+
+.about-page .partners h1 {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 69.33px;
+  text-align: center;
+  margin: 0 0 56px 0;
+}
+
+.about-page .partners .partners-frame {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 32px;
+}
+
+.about-page .partners .partners-frame .box-frame {
+  width: 237px;
+  height: 173px;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-page .partners .partners-frame .box-frame img {
+  width: 150px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.about-page .partners .btn-frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-page .partners .btn-frame .slider-btn {
+  width: 40px;
+  height: 50px;
+  border: 1px solid #6b6d81;
+  border-radius: 50%;
+}
+
+.about-page .partners .pagination-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.about-page .partners .pagination-section .pagination-arrow {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #848484;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.about-page .partners .pagination-section .pagination-arrow .arrow {
+  font-size: 24px;
+  color: #848484;
+}
+
+/** Questions **/
+
+.about-page .questions {
+  width: 100%;
+  height: auto;
+  margin-top: 140px;
+}
+
+.about-page .questions h1 {
+  font-family: "Gilroy";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 78.4px;
+  text-align: center;
+  color: #181818;
+  margin: 0 0 56px 0;
+}
+
+.about-page .questions .questions-frame {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.about-page .questions .questions-frame .box-frame {
+  width: 954px;
+  height: auto;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.about-page .questions .questions-frame .box-frame h3 {
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.11px;
+  color: #181818;
+  text-align: justify;
+}
+
+.about-page .questions .questions-frame .box-frame h4 {
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33.6px;
+  color: #848484;
+}
+
+.about-page .questions .questions-frame .box-frame .expand-icon {
+  width: 36px;
+  height: 36px;
+  background: #e8e8e8;
+  border: 1px solid #f9fafd;
+  border-radius: 22px;
+}
+
+.css-eqpfi5-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0;
+}
+
+.css-eqpfi5-MuiAccordionSummary-content {
+  margin: 0;
+}

@@ -1,6 +1,25 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { GoArrowRight } from "react-icons/go";
+import { useHistory } from "react-router-dom";
 
-export default function Portfolio() {
+interface PortfolioProps {
+  portfolioItems: {
+    id: number;
+    img: string;
+    title: string;
+    desc: string;
+  }[];
+}
+
+export default function Portfolio({ portfolioItems }: PortfolioProps) {
+  const history = useHistory();
+
+  /** HANDLERS **/
+
+  const choosePortfolioHandler = (id: number) => {
+    history.push(`/portfolio/${id}`);
+  };
+
   return (
     <Stack className={"portfolio-frame"}>
       <Typography variant="h1" className={"title"}>
@@ -38,37 +57,30 @@ export default function Portfolio() {
       </Stack>
 
       <Stack className={"portfolio-boxes"}>
-        <Box className={"portfolio-box"}>
-          <Box className={"box-img"}>
-            <img src="/img/spring-p.png" alt="" />
-          </Box>
-          <Typography variant="h4">Spring Pharmaceutic</Typography>
-          <Typography variant="body2">Каробка, картон дизайн</Typography>
-        </Box>
-        <Box className={"portfolio-box"}>
-          <Box className={"box-img"}>
-            <img src="/img/spring-p.png" alt="" />
-          </Box>
-          <Typography variant="h4">Spring Pharmaceutic</Typography>
-          <Typography variant="body2">Каробка, картон дизайн</Typography>
-        </Box>
-        <Box className={"portfolio-box"}>
-          <Box className={"box-img"}>
-            <img src="/img/spring-p.png" alt="" />
-          </Box>
-          <Typography variant="h4">Spring Pharmaceutic</Typography>
-          <Typography variant="body2">Каробка, картон дизайн</Typography>
-        </Box>
-        <Box className={"portfolio-box"}>
-          <Box className={"box-img"}>
-            <img src="/img/spring-p.png" alt="" />
-          </Box>
-          <Typography variant="h4">Spring Pharmaceutic</Typography>
-          <Typography variant="body2">Каробка, картон дизайн</Typography>
-        </Box>
+        {portfolioItems.map((item, index) => {
+          return (
+            <Box
+              className={"portfolio-box"}
+              key={index}
+              onClick={() => choosePortfolioHandler(item.id)}
+            >
+              <Box className={"box-img"}>
+                <img src={item.img} alt="" />
+              </Box>
+              <Typography variant="h4">{item.title}</Typography>
+              <Typography variant="body2">{item.desc}</Typography>
+            </Box>
+          );
+        })}
       </Stack>
 
-      <Button>2312</Button>
+      <Button
+        variant="contained"
+        className={"portfolio-btn"}
+        endIcon={<GoArrowRight className="arrowRight-icon" />}
+      >
+        Показать ещё
+      </Button>
     </Stack>
   );
 }
