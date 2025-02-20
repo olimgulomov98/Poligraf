@@ -26,7 +26,8 @@
   gap: 48px;
 }
 
-.navbar .navbar-container .hover-line a {
+.navbar .navbar-container .hover-line a,
+span {
   font-family: "Gilroy";
   font-size: 20px;
   font-weight: 500;
@@ -37,6 +38,16 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
+  cursor: pointer;
+}
+
+.navbar .navbar-container .menu-frame .MuiPaper-root {
+  border: 1px solid;
+  box-shadow: none;
+}
+
+.navbar .navbar-container .menu-item {
+  color: red;
 }
 
 .navbar .navbar-container .navbar-right-frame {

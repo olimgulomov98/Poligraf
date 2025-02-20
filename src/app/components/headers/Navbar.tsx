@@ -1,9 +1,20 @@
-import { Box, Button, Stack } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Navbar() {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Stack className={"navbar"}>
       <Stack className={"navbar-container"}>
@@ -22,13 +33,60 @@ export default function Navbar() {
           <Box className={"hover-line"}>
             <NavLink to="/portfolio">Портфолио</NavLink>
           </Box>
-          <Box className={"hover-line"}>
-            <NavLink to="/uslugi">
+          <Box className={"hover-line"} onClick={handleClick}>
+            <span>
               Услуги <KeyboardArrowDownIcon fontSize="medium" />
-            </NavLink>
+            </span>
           </Box>
+
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            sx={{
+              "& .MuiPaper-root": {
+                border: "1px solid #c5c3c3",
+                borderRadius: "5px",
+                boxShadow: "none",
+              },
+              "& .MuiMenu-list": {
+                paddingTop: "0px",
+                paddingBottom: "0px",
+              },
+            }}
+          >
+            <MenuItem
+              onClick={handleClose}
+              component={NavLink}
+              to="/services/Офсетная-печать"
+              sx={{ paddingTop: "10px", paddingBottom: "10px" }}
+            >
+              Офсетная печать
+            </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={NavLink}
+              to="/services/Цивровая-печать"
+              sx={{
+                borderTop: "1px solid #e8e8e8",
+                borderBottom: "1px solid #e8e8e8",
+                paddingTop: "10px",
+                paddingBottom: "10px",
+              }}
+            >
+              Цивровая печать
+            </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={NavLink}
+              to="/services/Флекс-печать"
+              sx={{ paddingTop: "10px", paddingBottom: "10px" }}
+            >
+              Флекс печать
+            </MenuItem>
+          </Menu>
           <Box className={"hover-line"}>
-            <NavLink to="/o-nas">О нас</NavLink>
+            <NavLink to="/about-us">О нас</NavLink>
           </Box>
         </Stack>
         <Stack className={"navbar-right-frame"}>

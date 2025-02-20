@@ -21,10 +21,10 @@ function App() {
         <Route path="/portfolio">
           <PortfolioPage />
         </Route>
-        <Route path="/uslugi">
+        <Route path="/services">
           <ServicesPage />
         </Route>
-        <Route path="/o-nas">
+        <Route path="/about-us">
           <AboutPage />
         </Route>
         <Route path="/">
