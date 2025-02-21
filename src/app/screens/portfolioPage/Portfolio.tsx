@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface PortfolioProps {
   portfolioItems: {
@@ -12,12 +12,12 @@ interface PortfolioProps {
 }
 
 export default function Portfolio({ portfolioItems }: PortfolioProps) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   /** HANDLERS **/
 
   const choosePortfolioHandler = (id: number) => {
-    history.push(`/portfolio/${id}`);
+    navigate(`/portfolio/${id}`);
   };
 
   return (

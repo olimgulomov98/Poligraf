@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/headers/Navbar";
 import Footer from "./components/footer";
 import Client from "./components/client";
@@ -21,24 +21,16 @@ function App() {
     <>
       <Navbar openModal={() => setIsOpen(true)} />
 
-      <Switch>
-        <Route path="/portfolio">
-          <PortfolioPage />
-        </Route>
-        <Route path="/services/:serviceType">
-          <ServicesPage />
-        </Route>
-        <Route path="/about-us">
-          <AboutPage />
-        </Route>
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/portfolio/*" element={<PortfolioPage />} />
+        <Route path="/services/:serviceType" element={<ServicesPage />} />
+        <Route path="/about-us" element={<AboutPage />} />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
 
       <Client />
 
-      <Footer />
+      <Footer openModal={() => setIsOpen(true)} />
 
       <ContactModal open={isOpen} handleClose={() => setIsOpen(false)} />
     </>

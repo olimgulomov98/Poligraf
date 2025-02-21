@@ -14,7 +14,7 @@ interface ChosenPortfolioProps {
 export default function ChosenPortfolio({
   portfolioItems,
 }: ChosenPortfolioProps) {
-  const { portfolioId } = useParams<{ portfolioId: string }>();
+  const { portfolioId } = useParams();
 
   if (!portfolioItems || portfolioItems.length === 0) {
     return <h2>Portfolio ro‘yxati yuklanmadi!</h2>;
@@ -44,7 +44,7 @@ export default function ChosenPortfolio({
             </Box>
           ))}
         </Stack>
-        <Typography variant="body2" className={"main-parag"}>
+        <Box className={"main-parag"}>
           Выполненные работы для Компании:
           <p>
             Полиграфическая продукция:{" "}
@@ -81,7 +81,7 @@ export default function ChosenPortfolio({
               партнерам качественную печатную продукцию для бизнеса.
             </span>
           </p>
-        </Typography>
+        </Box>
       </Stack>
     </Stack>
   );

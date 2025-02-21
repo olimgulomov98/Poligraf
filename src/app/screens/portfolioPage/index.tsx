@@ -1,4 +1,4 @@
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Portfolio from "./Portfolio";
 import ChosenPortfolio from "./ChosenPortfolio";
 import "../../../css/portfolio.css";
@@ -96,17 +96,15 @@ const portfolioItems = [
 ];
 
 export default function PortfolioPage() {
-  const portfolio = useRouteMatch();
   return (
     <div className={"portfolio-page"}>
-      <Switch>
-        <Route path={`${portfolio.path}/:portfolioId`}>
-          <ChosenPortfolio portfolioItems={portfolioItems} />
-        </Route>
-        <Route path={`${portfolio.path}`}>
-          <Portfolio portfolioItems={portfolioItems} />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route index element={<Portfolio portfolioItems={portfolioItems} />} />
+        <Route
+          path=":portfolioId"
+          element={<ChosenPortfolio portfolioItems={portfolioItems} />}
+        />
+      </Routes>
     </div>
   );
 }

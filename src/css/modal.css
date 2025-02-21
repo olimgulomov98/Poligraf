@@ -9,7 +9,7 @@
   height: 713px;
   background: #fff;
   box-shadow: 24;
-  padding: 56px;
+  padding: 36px 56px;
   border-radius: 24px;
 }
 
@@ -29,9 +29,10 @@
 }
 
 .modal .modal-navbar .close-icon {
-  font-size: 36px;
-  font-weight: 700;
+  width: 48px;
+  height: 48px;
   color: #181818;
+  cursor: pointer;
 }
 
 .modal .modal-paragraph {
@@ -112,7 +113,7 @@
 
 .modal .custom-form .form-group input:focus {
   outline: none;
-  border-color: #999;
+  border: 1px solid #848484;
 }
 
 .modal .custom-form .form-group input::placeholder {
@@ -128,7 +129,7 @@
   text-decoration: none;
   text-transform: none;
   box-shadow: none;
-  margin: 32px auto 0 auto;
+  margin: 10px auto 0 auto;
   font-family: "Gilroy";
   font-size: 24px;
   font-weight: 600;
@@ -141,6 +142,69 @@
 }
 
 .modal .arrowRight-icon {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+
+.form-group input.error-border {
+  border: 1px solid #ff4747 !important;
+  color: #ff4747 !important;
+}
+
+/** Success Modal **/
+
+.success-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 761px;
+  height: 713px;
+  background: #fff;
+  box-shadow: 24;
+  border-radius: 24px;
+  position: relative;
+}
+
+.success-modal .close-btn {
+  position: absolute;
+  top: 56px;
+  right: 56px;
+  width: 48px;
+  height: 48px;
+  color: #181818;
+  cursor: pointer;
+}
+
+.success-modal .success-img {
+  width: 527px;
+  height: 530px;
+  margin: 0 auto 53px auto;
+}
+
+.success-modal .success-btn {
+  width: 182px;
+  height: 56px;
+  border-radius: 12px;
+  background: #181818;
+  color: #fff;
+  text-decoration: none;
+  text-transform: none;
+  box-shadow: none;
+  margin: 0 auto;
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.4px;
+}
+
+.success-modal .success-btn:hover {
+  background: #181818;
+  box-shadow: none;
+}
+
+.success-modal .modal .arrowRight-icon {
   width: 32px;
   height: 32px;
   color: #fff;

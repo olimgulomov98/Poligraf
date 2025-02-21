@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
 
-export default function Footer() {
+export default function Footer({ openModal }: { openModal: () => void }) {
   return (
     <Stack className={"footer"}>
       <Box className={"footer-logo"}>
@@ -19,6 +19,7 @@ export default function Footer() {
             variant="contained"
             className={"footer-btn"}
             endIcon={<GoArrowRight className="arrowRight-icon" />}
+            onClick={openModal}
           >
             Связаться
           </Button>

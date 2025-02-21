@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Box, Button, Menu, MenuItem, Stack } from "@mui/material";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Navbar({ openModal }: { openModal: () => void }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget);
@@ -18,7 +18,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
   };
 
   const handleServiceClick = (service: string) => {
-    history.push(`/services/${service}`);
+    navigate(`/services/${service}`);
     handleClose();
   };
 
