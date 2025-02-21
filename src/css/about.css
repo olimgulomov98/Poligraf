@@ -3,6 +3,8 @@
 .about-page {
   width: 100%;
   height: auto;
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
 .about-page .title {

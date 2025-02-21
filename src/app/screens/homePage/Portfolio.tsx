@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 
 const portfolioItems = [
   {
@@ -35,6 +36,14 @@ const portfolioItems = [
 ];
 
 export default function Portfolio() {
+  const navigate = useNavigate();
+
+  /** HANDLERS **/
+
+  const portfolioHandler = () => {
+    navigate("/portfolio");
+    window.scrollTo(0, 0);
+  };
   return (
     <Stack className={"portfolio"}>
       <Typography variant="h1">Портфолио</Typography>
@@ -55,6 +64,7 @@ export default function Portfolio() {
         variant="contained"
         className={"portfolio-btn"}
         endIcon={<GoArrowRight className="arrowRight-icon" />}
+        onClick={portfolioHandler}
       >
         Посмотреть все
       </Button>

@@ -1,24 +1,44 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
-import { useNavigate } from "react-router-dom";
 
 interface PortfolioProps {
   portfolioItems: {
     id: number;
+    category: string;
     img: string;
     title: string;
     desc: string;
   }[];
 }
 
+const categories = [
+  "Популярные",
+  "Травертин, эмульсия",
+  "Визитки",
+  "Ручки",
+  "Сумки",
+  "Картоны",
+  "Флаеры",
+  "Гофра каробки",
+];
+
 export default function Portfolio({ portfolioItems }: PortfolioProps) {
   const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState("Популярные");
 
   /** HANDLERS **/
 
   const choosePortfolioHandler = (id: number) => {
     navigate(`/portfolio/${id}`);
   };
+
+  // Kategoriya bo‘yicha filter qilish
+  const filteredItems =
+    selectedCategory === "Популярные"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === selectedCategory);
 
   return (
     <Stack className={"portfolio-frame"}>
@@ -30,34 +50,28 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
         <br /> Мы создаем упаковку и этикетки, которые выделяют ваш бренд.
       </Typography>
       <Stack className={"button-frame"}>
-        <Button variant="contained" className={"btn"}>
-          Популярные
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Травертин, эмульсия
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Визитки
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Ручки
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Сумки
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Картоны
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Флаеры
-        </Button>
-        <Button variant="contained" className={"btn"}>
-          Гофра каробки
-        </Button>
+        {categories.map((category, index) => (
+          <Button
+            key={index}
+            variant="contained"
+            className="btn"
+            onClick={() => setSelectedCategory(category)}
+            sx={{
+              background: selectedCategory === category ? "#181818" : "#f9f9f9",
+              "&:hover": {
+                background:
+                  selectedCategory === category ? "#181818" : "#f9f9f9",
+              },
+              color: selectedCategory === category ? "#fff" : "#181818",
+            }}
+          >
+            {category}
+          </Button>
+        ))}
       </Stack>
 
       <Stack className={"portfolio-boxes"}>
-        {portfolioItems.map((item, index) => {
+        {filteredItems.map((item, index) => {
           return (
             <Box
               className={"portfolio-box"}
@@ -73,6 +87,12 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
           );
         })}
       </Stack>
+
+      {filteredItems.length === 0 && (
+        <Typography variant="body2" className="no-results">
+          Ничего не найдено для выбранной категории.
+        </Typography>
+      )}
 
       <Button
         variant="contained"

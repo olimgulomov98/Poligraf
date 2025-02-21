@@ -1,6 +1,8 @@
 .portfolio-page {
   width: 100%;
   height: auto;
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
 /** Portfolio **/
@@ -45,17 +47,10 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 24.26px;
-  background: #f9f9f9;
   border-radius: 8px;
-  color: #181818;
   text-decoration: none;
   text-transform: none;
   box-shadow: none;
-}
-
-.portfolio-page .portfolio-frame .button-frame .btn:hover {
-  background: #181818;
-  color: #fff;
 }
 
 .portfolio-page .portfolio-frame .portfolio-boxes {

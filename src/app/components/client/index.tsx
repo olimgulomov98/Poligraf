@@ -2,14 +2,18 @@ import { Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
 
 export default function Client() {
-  const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=71.675,41.004&z=16&l=map&size=650,450&pt=71.675,41.004,pm2rdm`;
-
   return (
     <Stack className="client">
       <Typography variant="h1">Станьте Клиентом</Typography>
       <Stack className="client-frame">
         <Stack className="client-left">
-          <img src={mapUrl} alt="Yandex Map" width={"100%"} height={"100%"} />
+          <iframe
+            src="https://yandex.uz/map-widget/v1/?from=mapframe&ll=71.650331%2C41.014719&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0NTYzMTA0MTcxEjdPyrt6YmVraXN0b24sIE5hbWFuZ2FuLCBHb8q7emFsLCBLb3NvbnNveSBrb8q7Y2hhc2ksIDIyIgoN20yPQhVJDyRC&source=mapframe&um=constructor%3Ac67e88b6c96a4d4f97113d177a34a4a38f48f14245b4b4c42d05c15b94b0c345&utm_source=mapframe&z=18.1"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            title="Yandex Map - 41.014926, 71.650112"
+          ></iframe>
         </Stack>
         <Stack className={"client-right"}>
           <form action={"#"} method={"POST"}>

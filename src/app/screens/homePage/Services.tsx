@@ -1,6 +1,16 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function Services() {
+  const navigate = useNavigate();
+
+  /** HANDLERS **/
+
+  const servicesHandler = (serviceType: string) => {
+    navigate(`/services/${serviceType}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Stack className={"services"}>
       <Typography variant="h1">Наши Услуги</Typography>
@@ -19,7 +29,11 @@ export default function Services() {
             Цифровая печать – это технология прямого нанесения красок на
             запечатываемую поверхность без применения постоянных печатных форм.
           </Typography>
-          <Button variant="contained" className={"box-btn"}>
+          <Button
+            variant="contained"
+            className={"box-btn"}
+            onClick={() => servicesHandler("digital")}
+          >
             Подробнее
           </Button>
         </Box>
@@ -37,7 +51,11 @@ export default function Services() {
             Офсетная печать, постпечать, полиграфические возможности,
             полноцветное изображение, высокое качество
           </Typography>
-          <Button variant="contained" className={"box-btn"}>
+          <Button
+            variant="contained"
+            className={"box-btn"}
+            onClick={() => servicesHandler("offset")}
+          >
             Подробнее
           </Button>
         </Box>
@@ -57,7 +75,11 @@ export default function Services() {
             этикетки и массового производства. Высокая скорость, экономичность и
             качество!
           </Typography>
-          <Button variant="contained" className={"box-btn"}>
+          <Button
+            variant="contained"
+            className={"box-btn"}
+            onClick={() => servicesHandler("flex")}
+          >
             Подробнее
           </Button>
         </Box>

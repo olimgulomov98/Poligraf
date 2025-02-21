@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
 
 export default function AboutUs() {
+  const navigate = useNavigate();
+
+  /** HANDLERS **/
+
+  const aboutHandler = () => {
+    navigate("/about-us");
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Stack className={"about-us"}>
       <Stack className={"about-left"}>
@@ -25,6 +35,7 @@ export default function AboutUs() {
           variant="contained"
           className={"about-btn"}
           endIcon={<GoArrowRight className="arrowRight-icon" />}
+          onClick={aboutHandler}
         >
           Узнать больше
         </Button>
