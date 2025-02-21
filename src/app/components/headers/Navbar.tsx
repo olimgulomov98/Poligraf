@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-export default function Navbar() {
+export default function Navbar({ openModal }: { openModal: () => void }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const history = useHistory();
@@ -99,6 +99,7 @@ export default function Navbar() {
             variant="contained"
             className={"navbar-btn"}
             endIcon={<GoArrowRight className={"arrowRight-icon"} />}
+            onClick={openModal}
           >
             Связаться
           </Button>
