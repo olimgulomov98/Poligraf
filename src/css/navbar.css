@@ -27,7 +27,7 @@
 }
 
 .navbar .navbar-container .hover-line a,
-span {
+.uslugi-link {
   font-family: "Gilroy";
   font-size: 20px;
   font-weight: 500;
@@ -80,4 +80,10 @@ span {
   color: #fff;
   text-decoration: none;
   text-transform: none;
+}
+
+.navbar .navbar-container .navbar-right-frame .arrowRight-icon {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
 }

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Box, Button, Menu, MenuItem, Stack } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const history = useHistory();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget);
@@ -15,6 +16,12 @@ export default function Navbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleServiceClick = (service: string) => {
+    history.push(`/services/${service}`);
+    handleClose();
+  };
+
   return (
     <Stack className={"navbar"}>
       <Stack className={"navbar-container"}>
@@ -34,7 +41,7 @@ export default function Navbar() {
             <NavLink to="/portfolio">Портфолио</NavLink>
           </Box>
           <Box className={"hover-line"} onClick={handleClick}>
-            <span>
+            <span className={"uslugi-link"}>
               Услуги <KeyboardArrowDownIcon fontSize="medium" />
             </span>
           </Box>
@@ -56,17 +63,13 @@ export default function Navbar() {
             }}
           >
             <MenuItem
-              onClick={handleClose}
-              component={NavLink}
-              to="/services/Офсетная-печать"
+              onClick={() => handleServiceClick("offset")}
               sx={{ paddingTop: "10px", paddingBottom: "10px" }}
             >
               Офсетная печать
             </MenuItem>
             <MenuItem
-              onClick={handleClose}
-              component={NavLink}
-              to="/services/Цивровая-печать"
+              onClick={() => handleServiceClick("digital")}
               sx={{
                 borderTop: "1px solid #e8e8e8",
                 borderBottom: "1px solid #e8e8e8",
@@ -77,14 +80,13 @@ export default function Navbar() {
               Цивровая печать
             </MenuItem>
             <MenuItem
-              onClick={handleClose}
-              component={NavLink}
-              to="/services/Флекс-печать"
+              onClick={() => handleServiceClick("flex")}
               sx={{ paddingTop: "10px", paddingBottom: "10px" }}
             >
               Флекс печать
             </MenuItem>
           </Menu>
+
           <Box className={"hover-line"}>
             <NavLink to="/about-us">О нас</NavLink>
           </Box>
@@ -96,7 +98,7 @@ export default function Navbar() {
           <Button
             variant="contained"
             className={"navbar-btn"}
-            endIcon={<GoArrowRight />}
+            endIcon={<GoArrowRight className={"arrowRight-icon"} />}
           >
             Связаться
           </Button>

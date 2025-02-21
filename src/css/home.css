@@ -97,6 +97,7 @@
 .homepage .about-us .about-left .arrowRight-icon {
   font-size: 28px;
   font-weight: 700;
+  color: #fff;
 }
 
 .homepage .about-us .about-right {
@@ -285,6 +286,7 @@
 .homepage .portfolio .arrowRight-icon {
   font-size: 28px;
   font-weight: 700;
+  color: #fff;
 }
 
 /** Numbers **/
@@ -364,7 +366,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 32px;
+  gap: 24px;
 }
 
 .homepage .partners .partners-frame .box-frame {

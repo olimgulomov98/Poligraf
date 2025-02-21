@@ -21,7 +21,7 @@ function App() {
         <Route path="/portfolio">
           <PortfolioPage />
         </Route>
-        <Route path="/services">
+        <Route path="/services/:serviceType">
           <ServicesPage />
         </Route>
         <Route path="/about-us">
