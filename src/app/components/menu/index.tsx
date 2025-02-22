@@ -54,21 +54,6 @@ export default function ContactModal({
     return Object.values(newErrors).every((err) => err === "");
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   if (validate()) {
-  //     setTimeout(() => {
-  //       console.log("Fake API: Ma'lumotlar yuborildi", {
-  //         ...formData,
-  //         phone: formData.phone.replace(/\s+/g, ""),
-  //       });
-  //       setSuccess(true);
-  //       handleClose();
-  //     }, 1000);
-  //   }
-  // };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
