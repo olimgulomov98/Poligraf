@@ -48,17 +48,20 @@ export default function Portfolio() {
     <Stack className={"portfolio"}>
       <Typography variant="h1">Портфолио</Typography>
       <Grid container spacing={4} justifyContent={"center"}>
-        {portfolioItems.map((item, index) => (
-          <Grid item md={4} key={index}>
-            <Box className={"portfolio-box"}>
-              <Box className={"p-box-img"}>
-                <img src={item.img} alt={item.title} />
+        {portfolioItems
+          .slice(0, window.innerWidth <= 450 ? 3 : portfolioItems.length)
+          .map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              {" "}
+              <Box className={"portfolio-box"}>
+                <Box className={"p-box-img"}>
+                  <img src={item.img} alt={item.title} />
+                </Box>
+                <Typography variant="h3">{item.title}</Typography>
+                <Typography variant="body2">{item.desc}</Typography>
               </Box>
-              <Typography variant="h3">{item.title}</Typography>
-              <Typography variant="body2">{item.desc}</Typography>
-            </Box>
-          </Grid>
-        ))}
+            </Grid>
+          ))}
       </Grid>
       <Button
         variant="contained"

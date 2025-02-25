@@ -15,13 +15,13 @@ interface PortfolioProps {
 
 const categories = [
   "Популярные",
-  "Травертин, эмульсия",
-  "Визитки",
-  "Ручки",
-  "Сумки",
-  "Картоны",
-  "Флаеры",
-  "Гофра каробки",
+  "Фармацевтика",
+  "Финанс",
+  "Производство",
+  "Гос. Проекты",
+  "Рестораны",
+  "Медицина",
+  "Другие",
 ];
 
 export default function Portfolio({ portfolioItems }: PortfolioProps) {
@@ -45,9 +45,9 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
       <Typography variant="h1" className={"title"}>
         Портфолио
       </Typography>
-      <Typography variant="body2" className={"paragraph"}>
-        Каждая наша работа — это гармония технологий, креатива и качества.
-        <br /> Мы создаем упаковку и этикетки, которые выделяют ваш бренд.
+      <Typography variant="body2" className={"paragraph p-2"}>
+        Каждая наша работа — это гармония технологий, креатива и качества. Мы
+        создаем упаковку и этикетки, которые выделяют ваш бренд.
       </Typography>
       <Stack className={"button-frame"}>
         {categories.map((category, index) => (

@@ -1,13 +1,52 @@
 import { Box, Stack, Typography } from "@mui/material";
 
+const flexItems = [
+  {
+    img: "/img/senupar.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/diazolin.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/atsiklovir.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/trexopal.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka6.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka4.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka3.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka5.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/dustotolin.png",
+    title: "Каробка, картон дизайн",
+  },
+];
+
 export default function Flex() {
   return (
     <Stack className={"printing"}>
-      <Typography variant="h1" className={"title"}>
+      <Typography variant="h1" className={"title t-2"}>
         Флоксографическая печать
       </Typography>
-      <Typography variant="body2" className={"paragraph"}>
-        Флексографическая печать – в настоящее время один из самых <br />
+      <Typography variant="body2" className={"paragraph p-2"}>
+        Флексографическая печать – в настоящее время один из самых
         распространенных способов нанесения изображений на упаковку и этикетку.
       </Typography>
 
@@ -94,6 +133,20 @@ export default function Flex() {
               всего, начинающим специалистам в полиграфии.
             </Typography>
           </Box>
+        </Stack>
+      </Stack>
+
+      <Stack className={"products"}>
+        <Typography variant="h1">Флоксографическая продукция</Typography>
+        <Stack className={"products-frame"}>
+          {flexItems.map((item, index) => (
+            <Box className={"product-box"} key={index}>
+              <Box className={"p-box-img"}>
+                <img src={item.img} alt={item.title} />
+              </Box>
+              <Typography variant="h3">{item.title}</Typography>
+            </Box>
+          ))}
         </Stack>
       </Stack>
     </Stack>

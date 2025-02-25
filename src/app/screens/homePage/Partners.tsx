@@ -17,7 +17,7 @@ const partnersItems = [
   { img: "/img/gtg.png" },
 ];
 
-const itemsPerPage = 10;
+const itemsPerPage = 9;
 const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
 
 export default function Partners() {
@@ -33,7 +33,7 @@ export default function Partners() {
 
   return (
     <Stack className="partners">
-      <Typography variant="h1">Партнёры</Typography>
+      <Typography variant="h1">Клиенты</Typography>
 
       <Stack className="partners-frame">
         {partnersItems

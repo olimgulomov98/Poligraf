@@ -27,6 +27,10 @@
   color: #848484;
 }
 
+.about-page .p-2 {
+  padding: 0 170px;
+}
+
 /** Numbers **/
 
 .about-page .numbers {
@@ -303,4 +307,140 @@
 
 .css-eqpfi5-MuiAccordionSummary-content {
   margin: 0;
+}
+
+@media (max-width: 450px) {
+  /** About **/
+
+  .about-page .title {
+    font-size: 32px;
+    line-height: 44.8px;
+    margin: 50px 0 8px 0;
+  }
+
+  .about-page .paragraph {
+    font-size: 12px;
+    line-height: 16.8px;
+  }
+
+  .about-page .p-2 {
+    padding: 0 40px;
+  }
+
+  /** Numbers **/
+
+  .about-page .numbers {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    margin-top: 50px;
+  }
+
+  .about-page .numbers h1 {
+    font-size: 32px;
+    line-height: 39.62px;
+    margin: 0 0 32px 0;
+  }
+
+  .about-page .numbers .numbers-frame {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-page .numbers .numbers-frame .box-frame {
+    width: 100%;
+  }
+
+  .about-page .numbers .numbers-frame .box-frame h3 {
+    font-size: 18px;
+    line-height: 21.83px;
+  }
+
+  .about-page .numbers .numbers-frame .box-frame p {
+    font-size: 50px;
+    line-height: 70px;
+  }
+
+  /** Values **/
+
+  .about-page .values {
+    display: none;
+  }
+
+  /** Partners **/
+
+  .about-page .partners {
+    padding: 0 20px;
+    margin-top: 50px;
+  }
+
+  .about-page .partners h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+    margin: 0 0 32px 0;
+  }
+
+  .about-page .partners .partners-frame {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 12px;
+  }
+
+  .about-page .partners .partners-frame .box-frame {
+    width: 100%;
+    height: 89px;
+    border-radius: 12px;
+  }
+
+  .about-page .partners .partners-frame .box-frame img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-page .partners .pagination-section {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  /** Questions **/
+
+  .about-page .questions {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .about-page .questions h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+    margin: 0 0 32px 0;
+  }
+
+  .about-page .questions .questions-frame {
+    gap: 22px;
+  }
+
+  .about-page .questions .questions-frame .box-frame {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+  }
+
+  .about-page .questions .questions-frame .box-frame h3 {
+    font-size: 9px;
+    line-height: 11.9px;
+  }
+
+  .about-page .questions .questions-frame .box-frame h4 {
+    font-size: 9px;
+    line-height: 13.74px;
+  }
+
+  .about-page .questions .questions-frame .box-frame .expand-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 9px;
+  }
 }

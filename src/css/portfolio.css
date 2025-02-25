@@ -33,6 +33,10 @@
   margin-top: 16px;
 }
 
+.portfolio-page .portfolio-frame .p-2 {
+  padding: 0 280px;
+}
+
 .portfolio-page .portfolio-frame .button-frame {
   display: flex;
   flex-direction: row;
@@ -204,4 +208,168 @@
 
 .portfolio-page .chosenPortfolio-frame .main-content .main-parag span {
   font-weight: 500;
+}
+
+@media (max-width: 450px) {
+  .portfolio-page .portfolio-frame {
+    padding: 0 20px;
+    margin-top: 50px;
+  }
+
+  .portfolio-page .portfolio-frame .title {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  .portfolio-page .portfolio-frame .paragraph {
+    font-size: 12px;
+    line-height: 16.8px;
+    margin-top: 8px;
+  }
+
+  .portfolio-page .portfolio-frame .button-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 48px 0 18px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .portfolio-page .portfolio-frame .button-frame::-webkit-scrollbar {
+    display: none; /* Chrome va Safari uchun scrollbarni yashirish */
+  }
+
+  .portfolio-page .portfolio-frame .button-frame .btn {
+    font-size: 16px;
+    line-height: 19.41px;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-boxes {
+    gap: 9px;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-boxes .portfolio-box {
+    width: 100%;
+    height: 140px;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-boxes .portfolio-box .box-img {
+    width: 100%;
+    height: 113px;
+    border-radius: 7px;
+  }
+
+  .portfolio-page
+    .portfolio-frame
+    .portfolio-boxes
+    .portfolio-box
+    .box-img
+    img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-boxes .portfolio-box h4 {
+    font-size: 7px;
+    line-height: 9.8px;
+    margin: 6px 0 2px 0;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-boxes .portfolio-box p {
+    font-size: 6px;
+    line-height: 7.28px;
+  }
+
+  .portfolio-page .portfolio-frame .portfolio-btn {
+    width: 227px;
+    height: 48px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 32px auto 0 auto;
+  }
+
+  .portfolio-page .portfolio-frame .arrowRight-icon {
+    font-size: 28px;
+  }
+
+  /** ChosenPortfolio **/
+
+  .portfolio-page .chosenPortfolio-frame .main-img {
+    margin: 56px 0;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-img img {
+    width: 345px;
+    height: 70px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content {
+    padding: 50px 20px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content h1 {
+    font-size: 32px;
+    line-height: 39.62px;
+    margin-bottom: 32px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .boxes-frame {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .boxes-frame .box-img {
+    width: 124px;
+    height: 114px;
+    border-radius: 7px;
+  }
+
+  .portfolio-page
+    .chosenPortfolio-frame
+    .main-content
+    .boxes-frame
+    .box-img
+    img {
+    width: 100%;
+    height: 114px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .boxes-frame h3 {
+    font-size: 7px;
+    line-height: 10.26px;
+    margin: 6px 0 2px 0;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .boxes-frame p {
+    font-size: 6px;
+    line-height: 7.42px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .main-parag {
+    font-size: 12px;
+    line-height: 16.8px;
+    margin-top: 32px;
+  }
+
+  .portfolio-page .chosenPortfolio-frame .main-content .main-parag span {
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 415px) {
+  .portfolio-page .chosenPortfolio-frame .main-content .boxes-frame .box-img {
+    width: 100%;
+  }
 }

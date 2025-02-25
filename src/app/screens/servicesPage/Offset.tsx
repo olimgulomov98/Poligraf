@@ -1,16 +1,55 @@
 import { Box, Stack, Typography } from "@mui/material";
 
+const offsetItems = [
+  {
+    img: "/img/senupar.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/diazolin.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/atsiklovir.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/trexopal.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka6.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka4.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka3.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka5.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/dustotolin.png",
+    title: "Каробка, картон дизайн",
+  },
+];
+
 export default function Offset() {
   return (
     <Stack className={"printing"}>
       <Typography variant="h1" className={"title"}>
         Офсетная печать
       </Typography>
-      <Typography variant="body2" className={"paragraph"}>
+      <Typography variant="body2" className={"paragraph p-2"}>
         Офсетная печать, в настоящий момент, наиболее распространенный способ
-        <br />
         получения полноцветного изображения полиграфическим способом.
       </Typography>
+
       <Stack className={"boxes-container"}>
         <Stack className={"boxes-frame"}>
           <Box className={"box-left"}>
@@ -112,6 +151,20 @@ export default function Offset() {
               прочность и неповторимый вид.
             </Typography>
           </Box>
+        </Stack>
+      </Stack>
+
+      <Stack className={"products"}>
+        <Typography variant="h1">Офсетная продукция</Typography>
+        <Stack className={"products-frame"}>
+          {offsetItems.map((item, index) => (
+            <Box className={"product-box"} key={index}>
+              <Box className={"p-box-img"}>
+                <img src={item.img} alt={item.title} />
+              </Box>
+              <Typography variant="h3">{item.title}</Typography>
+            </Box>
+          ))}
         </Stack>
       </Stack>
     </Stack>

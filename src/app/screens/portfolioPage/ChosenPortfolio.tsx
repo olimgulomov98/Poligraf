@@ -31,6 +31,7 @@ export default function ChosenPortfolio({
       <Box className={"main-img"}>
         <img src={chosenItem.img} alt={chosenItem.title} />
       </Box>
+
       <Stack className={"main-content"}>
         <Typography variant="h1">Сделанные Работы</Typography>
         <Stack className={"boxes-frame"}>

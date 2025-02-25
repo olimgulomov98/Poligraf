@@ -19,7 +19,7 @@ export default function AboutUs() {
         <Typography variant="h3">
           Poligraf Extra — ваш надежный партнер с <br /> 2009 года!
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" sx={{ marginBottom: "16px" }}>
           Компания "Poligraf Extra" начала свою деятельность в 2009 <br /> году
           и с тех пор заняла особое место в сердцах наших <br /> клиентов. Мы
           стремимся к совершенству в каждом проекте, <br /> предоставляя

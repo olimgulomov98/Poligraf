@@ -89,3 +89,58 @@
   border: 1px solid #ff4747 !important;
   color: #ff4747 !important;
 }
+
+@media (max-width: 450px) {
+  .client {
+    height: 869px;
+    padding: 0 20px;
+    margin: 50px auto 0 auto;
+  }
+
+  .client h1 {
+    font-size: 32px;
+    line-height: 39.62px;
+    margin: 0 0 32px 0;
+  }
+
+  .client .client-frame {
+    height: 797px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .client .client-frame .client-left {
+    width: 100%;
+    height: 353px;
+    border-radius: 20px;
+  }
+
+  .client .client-frame .client-right {
+    width: 100%;
+  }
+
+  .client .client-frame .client-right .client-input-box label {
+    font-size: 18px;
+    line-height: 21.83px;
+    margin-bottom: 4px;
+  }
+
+  .client .client-frame .client-right .client-input-box input {
+    height: 50px;
+    font-size: 18px;
+    line-height: 21.6px;
+    margin-bottom: 16px;
+    padding-left: 14px;
+  }
+
+  .client .client-frame .client-right .client-btn {
+    width: 188px;
+    height: 52px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .client .client-frame .client-right .arrowRight-icon {
+    font-size: 22px;
+  }
+}

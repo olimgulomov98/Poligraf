@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
@@ -71,17 +71,33 @@ const faqs = [
   },
 ];
 
-const itemsPerPage = 25;
-const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
-
 export default function AboutPage() {
   const [page, setPage] = useState(1);
   const [expanded, setExpanded] = useState<number | false>(false);
+  const [itemsPerPage, setItemsPerPage] = useState(25);
 
-  const handleChange =
-    (panel: number) => (_: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
+  const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth <= 450) {
+        setItemsPerPage(15);
+      } else {
+        setItemsPerPage(25);
+      }
     };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  useEffect(() => {
+    if (page > totalPages) {
+      setPage(totalPages || 1);
+    }
+  }, [totalPages, page]);
 
   const handleNext = () => {
     if (page < totalPages) setPage(page + 1);
@@ -90,16 +106,22 @@ export default function AboutPage() {
   const handlePrev = () => {
     if (page > 1) setPage(page - 1);
   };
+
+  const handleChange =
+    (panel: number) => (_: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
   return (
     <Stack className={"about-page"}>
       <Typography variant="h1" className={"title"}>
         Яркая полиграфия для вашего успеха!
       </Typography>
-      <Typography variant="body2" className={"paragraph"}>
+      <Typography variant="body2" className={"paragraph p-2"}>
         Мы создаем инновационные полиграфические решения, которые помогают
-        брендам выделяться. Совмещая <br /> передовые технологии и опыт, мы
-        предлагаем клиентам уникальную печатную продукцию, соответствующую{" "}
-        <br /> самым высоким стандартам.
+        брендам выделяться. Совмещая передовые технологии и опыт, мы предлагаем
+        клиентам уникальную печатную продукцию, соответствующую самым высоким
+        стандартам.
       </Typography>
 
       {/* Numbers */}
@@ -193,6 +215,10 @@ export default function AboutPage() {
                 backgroundColor: expanded === index ? "#fff" : "#f9f9f9",
                 borderRadius: "16px",
                 "&:before": { display: "none" },
+                "@media (max-width: 450px)": {
+                  padding: "6px 9px",
+                  margin: 0,
+                },
               }}
             >
               <AccordionSummary
@@ -207,17 +233,37 @@ export default function AboutPage() {
                   borderBottom:
                     expanded === index ? "2px solid #e8e8e8" : "none",
                   borderRadius: "16px",
-                  padding: "0",
+                  padding: 0,
+                  margin: 0,
+                  minHeight: 0,
                   borderBottomLeftRadius: expanded === index ? "0" : "16px",
                   borderBottomRightRadius: expanded === index ? "0" : "16px",
+                  "& .MuiAccordionSummary-content": {
+                    margin: "0 !important",
+                  },
+                  "@media (max-width: 450px)": {
+                    minHeight: "0px",
+                  },
+                  "&.Mui-expanded": {
+                    minHeight: "64px",
+                    "@media (max-width: 450px)": {
+                      minHeight: "0px",
+                      padding: "6px 9px",
+                    },
+                  },
                 }}
               >
-                <Typography variant="h3">{faq.question}</Typography>
+                <Typography variant="h3" sx={{ margin: 0 }}>
+                  {faq.question}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails
                 sx={{
                   backgroundColor: "#fff",
                   padding: "20px 0 12px 0",
+                  "@media (max-width: 450px)": {
+                    padding: "6px 9px 6px 9px !important", // 🎯 ":" olib tashlandi
+                  },
                 }}
               >
                 <Typography variant="h4">{faq.answer}</Typography>

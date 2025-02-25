@@ -4,6 +4,7 @@ import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./i18n";
 import "./css/index.css";
 
 const container = document.getElementById("root")!;

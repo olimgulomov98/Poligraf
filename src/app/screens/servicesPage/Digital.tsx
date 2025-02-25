@@ -1,5 +1,44 @@
 import { Box, Stack, Typography } from "@mui/material";
 
+const digitalItems = [
+  {
+    img: "/img/senupar.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/diazolin.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/atsiklovir.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/trexopal.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka6.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka4.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka3.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/karton-karobka5.png",
+    title: "Каробка, картон дизайн",
+  },
+  {
+    img: "/img/dustotolin.png",
+    title: "Каробка, картон дизайн",
+  },
+];
+
 export default function Digital() {
   return (
     <Stack className={"printing"}>
@@ -95,6 +134,20 @@ export default function Digital() {
               для защиты от выгорания на солнце и механических повреждений.
             </Typography>
           </Box>
+        </Stack>
+      </Stack>
+
+      <Stack className={"products"}>
+        <Typography variant="h1">Цивровая продукция</Typography>
+        <Stack className={"products-frame"}>
+          {digitalItems.map((item, index) => (
+            <Box className={"product-box"} key={index}>
+              <Box className={"p-box-img"}>
+                <img src={item.img} alt={item.title} />
+              </Box>
+              <Typography variant="h3">{item.title}</Typography>
+            </Box>
+          ))}
         </Stack>
       </Stack>
     </Stack>

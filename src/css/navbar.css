@@ -67,6 +67,7 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
+  cursor: pointer;
 }
 
 .navbar .navbar-container .navbar-right-frame .navbar-btn {
@@ -87,4 +88,22 @@
   font-size: 22px;
   font-weight: 700;
   color: #fff;
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    height: 87px;
+  }
+
+  .navbar .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar .navbar-container .links {
+    display: none;
+  }
+
+  .navbar .navbar-container .navbar-right-frame .navbar-lang {
+    gap: 8px;
+  }
 }
