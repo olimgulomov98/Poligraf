@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Modal, Box, Button, Typography, Stack } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import { GoArrowRight } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 import SuccessModal from "./SuccessModal";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function ContactModal({
   open,
@@ -23,6 +24,8 @@ export default function ContactModal({
     phone: "",
     email: "",
   });
+
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   const [success, setSuccess] = useState(false);
 
@@ -93,7 +96,7 @@ export default function ContactModal({
         <Stack className={"modal"}>
           <Box className={"modal-navbar"}>
             <Typography variant="h6" className={"title"}>
-              Стать клиентом
+              {t("Стать клиентом")}
             </Typography>
             <Box onClick={handleClose}>
               <CloseIcon className={"close-icon"} />
@@ -101,9 +104,9 @@ export default function ContactModal({
           </Box>
 
           <Typography variant="body2" className={"modal-paragraph"}>
-            Наши клиенты получают наилучшие результаты, когда наша команда
-            занимается их полиграфическими проектами в течение длительного
-            времени, обеспечивая качество и надежность
+            {t(
+              "Наши клиенты получают наилучшие результаты, когда наша команда занимается их полиграфическими проектами в течение длительного времени, обеспечивая качество и надежность"
+            )}
           </Typography>
 
           <Box className={"button-frame"}>
@@ -115,7 +118,7 @@ export default function ContactModal({
               }
             >
               <img src="/icons/telegram1.svg" alt="" />
-              <span style={{ marginTop: "3px" }}>Telegram</span>
+              <span style={{ marginTop: "3px" }}>{t("Телеграм")}</span>
             </Button>
             <Button
               variant="contained"
@@ -129,7 +132,7 @@ export default function ContactModal({
 
           <form className="custom-form" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
-              <label>Имя</label>
+              <label>{t("Имя")}</label>
               <input
                 type="text"
                 placeholder="John"
@@ -142,7 +145,7 @@ export default function ContactModal({
             </div>
 
             <div className="form-group">
-              <label>Номер телефона</label>
+              <label>{t("Номер телефона")}</label>
               <input
                 type="tel"
                 placeholder="+998 00 000 00 00"
@@ -153,7 +156,7 @@ export default function ContactModal({
             </div>
 
             <div className="form-group">
-              <label>Почта</label>
+              <label>{t("Почта")}</label>
               <input
                 type="email"
                 placeholder="john@email.com"
@@ -166,7 +169,7 @@ export default function ContactModal({
             </div>
 
             <div className="form-group">
-              <label>LinkedIn (обязательно)</label>
+              <label>{t("LinkedIn (необязательно)")}</label>
               <input
                 type="text"
                 placeholder="URL"
@@ -183,7 +186,7 @@ export default function ContactModal({
               className={"modal-btn"}
               endIcon={<GoArrowRight className={"arrowRight-icon"} />}
             >
-              Отправить
+              {t("Отправить")}
             </Button>
           </form>
         </Stack>

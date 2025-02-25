@@ -4,13 +4,17 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import ruNavbar from "./assets/locales/ru/navbarFooter.json";
 import uzNavbar from "./assets/locales/uz/navbarFooter.json";
+import ruMain from "./assets/locales/ru/main.json";
+import uzMain from "./assets/locales/uz/main.json";
 
 const resources = {
   Ru: {
     navbarFooter: ruNavbar,
+    main: ruMain,
   },
   Uz: {
     navbarFooter: uzNavbar,
+    main: uzMain,
   },
 };
 

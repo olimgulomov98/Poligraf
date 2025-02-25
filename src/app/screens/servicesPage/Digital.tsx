@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const digitalItems = [
   {
@@ -40,15 +41,16 @@ const digitalItems = [
 ];
 
 export default function Digital() {
+  const { t }: { t: (key: string) => string } = useTranslation("main");
   return (
     <Stack className={"printing"}>
       <Typography variant="h1" className={"title"}>
-        Цивровая печать
+        {t("Цивровая печать")}
       </Typography>
-      <Typography variant="body2" className={"paragraph"}>
-        Цифровая печать – это технология прямого нанесения красок на
-        <br />
-        запечатываемую поверхность без применения постоянных печатных форм.
+      <Typography variant="body2" className={"paragraph p-2"}>
+        {t(
+          "Цифровая печать – это технология прямого нанесения красок на запечатываемую поверхность без применения постоянных печатных форм."
+        )}
       </Typography>
 
       <Stack className={"boxes-container"}>
@@ -57,13 +59,13 @@ export default function Digital() {
             <Box className={"box-img"}>
               <img src="/icons/uv-printing-machine.svg" alt="" />
             </Box>
-            <Typography variant="h3">Цифровая печать</Typography>
+            <Typography variant="h3">{t("Цифровая печать")}</Typography>
           </Box>
           <Box className={"box-right"}>
             <Typography variant="body2">
-              это технология прямого нанесения красок на запечатываемую
-              поверхность без применения постоянных печатных форм. Позволяет
-              изготавливать малые тиражные продукции в полиграфии.
+              {t(
+                "это технология прямого нанесения красок на запечатываемую поверхность без применения постоянных печатных форм. Позволяет изготавливать малые тиражные продукции в полиграфии."
+              )}
             </Typography>
           </Box>
         </Stack>
@@ -76,14 +78,15 @@ export default function Digital() {
                 alt=""
               />
             </Box>
-            <Typography variant="h3">Современные технологии печати</Typography>
+            <Typography variant="h3">
+              {t("Современные технологии печати")}
+            </Typography>
           </Box>
           <Box className={"box-right"}>
             <Typography variant="body2">
-              объединяет в себе технологии, которые позволяют воспроизвести
-              текст и изображения электронного формата, не прибегая к формным
-              процессам. Технология прямого нанесения красок дешевая, что
-              способствует повышению ее рентабельности в выгоду.
+              {t(
+                "объединяет в себе технологии, которые позволяют воспроизвести текст и изображения электронного формата, не прибегая к формным процессам. Технология прямого нанесения красок дешевая, что способствует повышению ее рентабельности в выгоду."
+              )}
             </Typography>
           </Box>
         </Stack>
@@ -93,12 +96,15 @@ export default function Digital() {
             <Box className={"box-img"}>
               <img src="/icons/ctcp-machine.svg" alt="" />
             </Box>
-            <Typography variant="h3">Экономичная технология печати</Typography>
+            <Typography variant="h3">
+              {t("Экономичная технология печати")}
+            </Typography>
           </Box>
           <Box className={"box-right"}>
             <Typography variant="body2">
-              Технология прямого нанесения красок дешевая, что способствует
-              повышению ее рентабельности в выгоду.
+              {t(
+                "Технология прямого нанесения красок дешевая, что способствует повышению ее рентабельности в выгоду."
+              )}
             </Typography>
           </Box>
         </Stack>
@@ -108,13 +114,15 @@ export default function Digital() {
             <Box className={"box-img"}>
               <img src="/icons/ctp-machine.svg" alt="" />
             </Box>
-            <Typography variant="h3">Цифровая печать в дизайне</Typography>
+            <Typography variant="h3">
+              {t("Цифровая печать в дизайне")}
+            </Typography>
           </Box>
           <Box className={"box-right"}>
             <Typography variant="body2">
-              Цифровая печать широко используется в оформлении интерьеров и
-              дизайне. Этот вариант незаменим для широкоформатной печати
-              наружной рекламы.
+              {t(
+                "Цифровая печать широко используется в оформлении интерьеров и дизайне. Этот вариант незаменим для широкоформатной печати наружной рекламы."
+              )}
             </Typography>
           </Box>
         </Stack>
@@ -124,28 +132,27 @@ export default function Digital() {
             <Box className={"box-img"}>
               <img src="/icons/industrial-generator.svg" alt="" />
             </Box>
-            <Typography variant="h3">Широкоформатная печать</Typography>
+            <Typography variant="h3">{t("Широкоформатная печать")}</Typography>
           </Box>
           <Box className={"box-right"}>
             <Typography variant="body2">
-              Позволяет изготавливать качественные и привлекающие внимание
-              вывески, плакаты для выставок и ярмарок. Реклама больших форматов
-              печатается в разрешении 150-360 dpi. Готовое изделие ламинируется
-              для защиты от выгорания на солнце и механических повреждений.
+              {t(
+                "Позволяет изготавливать качественные и привлекающие внимание вывески, плакаты для выставок и ярмарок. Реклама больших форматов печатается в разрешении 150-360 dpi. Готовое изделие ламинируется для защиты от выгорания на солнце и механических повреждений."
+              )}
             </Typography>
           </Box>
         </Stack>
       </Stack>
 
       <Stack className={"products"}>
-        <Typography variant="h1">Цивровая продукция</Typography>
+        <Typography variant="h1">{t("Цивровая продукция")}</Typography>
         <Stack className={"products-frame"}>
           {digitalItems.map((item, index) => (
             <Box className={"product-box"} key={index}>
               <Box className={"p-box-img"}>
                 <img src={item.img} alt={item.title} />
               </Box>
-              <Typography variant="h3">{item.title}</Typography>
+              <Typography variant="h3">{t(item.title)}</Typography>
             </Box>
           ))}
         </Stack>

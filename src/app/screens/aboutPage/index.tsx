@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import "../../../css/about.css";
@@ -75,6 +76,7 @@ export default function AboutPage() {
   const [page, setPage] = useState(1);
   const [expanded, setExpanded] = useState<number | false>(false);
   const [itemsPerPage, setItemsPerPage] = useState(25);
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
 
@@ -115,29 +117,30 @@ export default function AboutPage() {
   return (
     <Stack className={"about-page"}>
       <Typography variant="h1" className={"title"}>
-        Яркая полиграфия для вашего успеха!
+        {t("Яркая полиграфия для вашего успеха")}!
       </Typography>
       <Typography variant="body2" className={"paragraph p-2"}>
-        Мы создаем инновационные полиграфические решения, которые помогают
-        брендам выделяться. Совмещая передовые технологии и опыт, мы предлагаем
-        клиентам уникальную печатную продукцию, соответствующую самым высоким
-        стандартам.
+        {t(
+          "Мы создаем инновационные полиграфические решения, которые помогают брендам выделяться. Совмещая передовые технологии и опыт, мы предлагаем клиентам уникальную печатную продукцию, соответствующую самым высоким стандартам."
+        )}
       </Typography>
 
       {/* Numbers */}
       <Stack className={"numbers"}>
-        <Typography variant="h1">Наши Реальные Цифры</Typography>
+        <Typography variant="h1">{t("Наши Реальные Цифры")}</Typography>
         <Stack className={"numbers-frame"}>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Команда экспертов</Typography>
+            <Typography variant="h3">{t("Команда экспертов")}</Typography>
             <Typography variant="body2">100+</Typography>
           </Box>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Успешных проектов</Typography>
+            <Typography variant="h3">{t("Успешных проектов")}</Typography>
             <Typography variant="body2">200+</Typography>
           </Box>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Страны с которыми мы работаем</Typography>
+            <Typography variant="h3">
+              {t("Страны с которыми мы работаем")}
+            </Typography>
             <Typography variant="body2">10+</Typography>
           </Box>
         </Stack>
@@ -145,30 +148,30 @@ export default function AboutPage() {
 
       {/* Values */}
       <Stack className={"values"}>
-        <Typography variant="h1">Наши ценности</Typography>
+        <Typography variant="h1">{t("Наши ценности")}</Typography>
         <Stack className={"values-frame"}>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Счастья всех</Typography>
+            <Typography variant="h3">{t("Счастья всех")}</Typography>
             <Typography variant="body2" className={"box-parag box-parag1"}>
-              Создаём решения для счастья каждого.
+              {t("Создаём решения для счастья каждого.")}
             </Typography>
             <Box className={"box-img"}>
               <img src="/img/namaste.png" alt="namaste" />
             </Box>
           </Box>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Качество</Typography>
+            <Typography variant="h3">{t("Качество")}</Typography>
             <Typography variant="body2" className={"box-parag"}>
-              Стремление к совершенству в каждом элементе.
+              {t("Стремление к совершенству в каждом элементе.")}
             </Typography>
             <Box className={"box-img"}>
               <img src="/img/burn.png" alt="burn" />
             </Box>
           </Box>
           <Box className={"box-frame"}>
-            <Typography variant="h3">Скорость</Typography>
+            <Typography variant="h3">{t("Скорость")}</Typography>
             <Typography variant="body2" className={"box-parag"}>
-              Быстрые и эффективные решения для вашего успеха.
+              {t("Быстрые и эффективные решения для вашего успеха.")}
             </Typography>
             <Box className={"box-img"}>
               <img src="/img/firecracke.png" alt="firecracke" />
@@ -179,7 +182,7 @@ export default function AboutPage() {
 
       {/* Partners */}
       <Stack className="partners">
-        <Typography variant="h1">Партнёры</Typography>
+        <Typography variant="h1">{t("Партнёры")}</Typography>
 
         <Stack className="partners-frame">
           {partnersItems
@@ -202,7 +205,7 @@ export default function AboutPage() {
 
       {/* Questions */}
       <Stack className={"questions"}>
-        <Typography variant="h1">Часто Задаваемые Вопросы</Typography>
+        <Typography variant="h1">{t("Часто Задаваемые Вопросы")}</Typography>
         <Stack className={"questions-frame"}>
           {faqs.map((faq, index) => (
             <Accordion
@@ -254,7 +257,7 @@ export default function AboutPage() {
                 }}
               >
                 <Typography variant="h3" sx={{ margin: 0 }}>
-                  {faq.question}
+                  {t(faq.question)}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails
@@ -262,11 +265,11 @@ export default function AboutPage() {
                   backgroundColor: "#fff",
                   padding: "20px 0 12px 0",
                   "@media (max-width: 450px)": {
-                    padding: "6px 9px 6px 9px !important", // 🎯 ":" olib tashlandi
+                    padding: "6px 9px 6px 9px !important",
                   },
                 }}
               >
-                <Typography variant="h4">{faq.answer}</Typography>
+                <Typography variant="h4">{t(faq.answer)}</Typography>
               </AccordionDetails>
             </Accordion>
           ))}

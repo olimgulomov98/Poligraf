@@ -357,6 +357,10 @@
     justify-content: center;
   }
 
+  .services .printing .boxes-container .need h3 {
+    font-size: 15px !important;
+  }
+
   /** Products **/
 
   .services .printing .products {

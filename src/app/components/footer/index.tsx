@@ -1,7 +1,9 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 export default function Footer({ openModal }: { openModal: () => void }) {
+  const { t }: { t: (key: string) => string } = useTranslation("navbarFooter");
   return (
     <Stack className={"footer"}>
       <Box className={"footer-logo"}>
@@ -10,7 +12,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
       <Stack className={"footer-frame"}>
         <Box>
           <Typography variant="h4">
-            Узбекистон, Наманган шахар, Косонсой куча 22 уй
+            {t("Узбекистон, Наманган шахар, Косонсой куча 22 уй")}
           </Typography>
 
           <Typography variant="h3">@poligraf_extra</Typography>
@@ -21,7 +23,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
             endIcon={<GoArrowRight className="arrowRight-icon" />}
             onClick={openModal}
           >
-            Связаться
+            {t("Связаться")}
           </Button>
         </Box>
         <Box>

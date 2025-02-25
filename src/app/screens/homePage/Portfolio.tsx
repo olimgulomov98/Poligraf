@@ -1,4 +1,5 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { GoArrowRight } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const portfolioItems = [
 
 export default function Portfolio() {
   const navigate = useNavigate();
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   /** HANDLERS **/
 
@@ -46,7 +48,7 @@ export default function Portfolio() {
   };
   return (
     <Stack className={"portfolio"}>
-      <Typography variant="h1">Портфолио</Typography>
+      <Typography variant="h1">{t("Портфолио")}</Typography>
       <Grid container spacing={4} justifyContent={"center"}>
         {portfolioItems
           .slice(0, window.innerWidth <= 450 ? 3 : portfolioItems.length)
@@ -58,7 +60,7 @@ export default function Portfolio() {
                   <img src={item.img} alt={item.title} />
                 </Box>
                 <Typography variant="h3">{item.title}</Typography>
-                <Typography variant="body2">{item.desc}</Typography>
+                <Typography variant="body2">{t(item.desc)}</Typography>
               </Box>
             </Grid>
           ))}
@@ -69,7 +71,7 @@ export default function Portfolio() {
         endIcon={<GoArrowRight className="arrowRight-icon" />}
         onClick={portfolioHandler}
       >
-        Посмотреть все
+        {t("Посмотреть все")}
       </Button>
     </Stack>
   );

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 interface PortfolioProps {
   portfolioItems: {
@@ -27,6 +28,7 @@ const categories = [
 export default function Portfolio({ portfolioItems }: PortfolioProps) {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("Популярные");
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   /** HANDLERS **/
 
@@ -43,11 +45,12 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
   return (
     <Stack className={"portfolio-frame"}>
       <Typography variant="h1" className={"title"}>
-        Портфолио
+        {t("Портфолио")}
       </Typography>
       <Typography variant="body2" className={"paragraph p-2"}>
-        Каждая наша работа — это гармония технологий, креатива и качества. Мы
-        создаем упаковку и этикетки, которые выделяют ваш бренд.
+        {t(
+          "Каждая наша работа — это гармония технологий, креатива и качества. Мы создаем упаковку и этикетки, которые выделяют ваш бренд."
+        )}
       </Typography>
       <Stack className={"button-frame"}>
         {categories.map((category, index) => (
@@ -65,7 +68,7 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
               color: selectedCategory === category ? "#fff" : "#181818",
             }}
           >
-            {category}
+            {t(category)}
           </Button>
         ))}
       </Stack>
@@ -82,7 +85,7 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
                 <img src={item.img} alt="" />
               </Box>
               <Typography variant="h4">{item.title}</Typography>
-              <Typography variant="body2">{item.desc}</Typography>
+              <Typography variant="body2">{t(item.desc)}</Typography>
             </Box>
           );
         })}
@@ -90,7 +93,7 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
 
       {filteredItems.length === 0 && (
         <Typography variant="body2" className="no-results">
-          Ничего не найдено для выбранной категории.
+          {t("Ничего не найдено для выбранной категории.")}
         </Typography>
       )}
 
@@ -99,7 +102,7 @@ export default function Portfolio({ portfolioItems }: PortfolioProps) {
         className={"portfolio-btn"}
         endIcon={<GoArrowRight className="arrowRight-icon" />}
       >
-        Показать ещё
+        {t("Показать ещё")}
       </Button>
     </Stack>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 const partnersItems = [
   { img: "/img/vivo.png" },
@@ -22,6 +23,7 @@ const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
 
 export default function Partners() {
   const [page, setPage] = useState(1);
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   const handleNext = () => {
     if (page < totalPages) setPage(page + 1);
@@ -33,7 +35,7 @@ export default function Partners() {
 
   return (
     <Stack className="partners">
-      <Typography variant="h1">Клиенты</Typography>
+      <Typography variant="h1">{t("Клиенты")}</Typography>
 
       <Stack className="partners-frame">
         {partnersItems

@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 export default function AboutUs() {
   const navigate = useNavigate();
+  const { t }: { t: (key: string) => string } = useTranslation("main");
 
   /** HANDLERS **/
 
@@ -15,21 +17,19 @@ export default function AboutUs() {
   return (
     <Stack className={"about-us"}>
       <Stack className={"about-left"}>
-        <Typography variant="h1">О Нас</Typography>
+        <Typography variant="h1">{t("О Нас")}</Typography>
         <Typography variant="h3">
-          Poligraf Extra — ваш надежный партнер с <br /> 2009 года!
+          {t("Poligraf Extra — ваш надежный партнер с 2009 года!")}
         </Typography>
         <Typography variant="body2" sx={{ marginBottom: "16px" }}>
-          Компания "Poligraf Extra" начала свою деятельность в 2009 <br /> году
-          и с тех пор заняла особое место в сердцах наших <br /> клиентов. Мы
-          стремимся к совершенству в каждом проекте, <br /> предоставляя
-          качественные решения и безупречный сервис.
+          {t(
+            "Компания Poligraf Extra начала свою деятельность в 2009 году и с тех пор заняла особое место в сердцах наших клиентов. Мы стремимся к совершенству в каждом проекте, предоставляя качественные решения и безупречный сервис."
+          )}
         </Typography>
         <Typography variant="body2">
-          Наша миссия — удовлетворять потребности клиентов, <br /> предлагая
-          продукцию и услуги, соответствующие самым <br /> высоким стандартам.
-          Нам доверяют, потому что мы ценим <br /> качество, надежность и
-          профессионализм.
+          {t(
+            "Наша миссия — удовлетворять потребности клиентов, предлагая продукцию и услуги, соответствующие самым высоким стандартам. Нам доверяют, потому что мы ценим качество, надежность и профессионализм."
+          )}
         </Typography>
         <Button
           variant="contained"
@@ -37,12 +37,12 @@ export default function AboutUs() {
           endIcon={<GoArrowRight className="arrowRight-icon" />}
           onClick={aboutHandler}
         >
-          Узнать больше
+          {t("Узнать больше")}
         </Button>
       </Stack>
       <Stack className={"about-right"}>
         <Box className={"title"}>
-          <Typography variant="h3">Руководители</Typography>
+          <Typography variant="h3">{t("Руководители")}</Typography>
         </Box>
         <Stack className={"content-frame"}>
           <Box>
@@ -56,7 +56,9 @@ export default function AboutUs() {
           <Box>
             <h4>Abror Ibrokhimov</h4>
             <p>
-              Предприятие “Poligraf Extra” начало свою деятельность в 2009 году.
+              {t(
+                "Предприятие Poligraf Extra начало свою деятельность в 2009 году."
+              )}
             </p>
           </Box>
         </Stack>
@@ -72,7 +74,9 @@ export default function AboutUs() {
           <Box>
             <Typography variant="h4">Abror Ibrokhimov</Typography>
             <Typography variant="body2">
-              Предприятие “Poligraf Extra” начало свою деятельность в 2009 году.
+              {t(
+                "Предприятие Poligraf Extra начало свою деятельность в 2009 году."
+              )}
             </Typography>
           </Box>
         </Stack>

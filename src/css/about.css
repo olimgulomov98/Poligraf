@@ -120,6 +120,7 @@
   border-radius: 24px;
   background: #f9f9f9;
   padding: 32px;
+  position: relative;
 }
 
 .about-page .values .values-frame .box-frame h3 {
@@ -153,6 +154,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: absolute;
+  bottom: 30px;
 }
 
 /** Partners **/

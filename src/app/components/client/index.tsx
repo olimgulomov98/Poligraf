@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 
 export default function Client() {
+  const { t }: { t: (key: string) => string } = useTranslation("main");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -69,24 +71,24 @@ export default function Client() {
         if (response.ok) {
           Swal.fire({
             icon: "success",
-            title: "✅ Ma'lumotlar yuborildi!",
-            text: "Biz siz bilan tez orada bog'lanamiz.",
+            title: t("Данные отправлены!"),
+            text: t("Мы свяжемся с вами в ближайшее время."),
             timer: 3000,
             showConfirmButton: false,
           });
         } else {
           Swal.fire({
             icon: "error",
-            title: "❌ Xatolik yuz berdi!",
-            text: "Iltimos, qayta urinib ko'ring.",
+            title: t("Произошла ошибка!"),
+            text: t("Попробуйте еще раз."),
           });
         }
       } catch (error) {
         console.error("Xatolik:", error);
         Swal.fire({
           icon: "error",
-          title: "❌ Ma'lumot yuborishda xatolik yuz berdi!",
-          text: "Internet aloqangizni tekshirib ko'ring.",
+          title: t("Произошла ошибка при отправке информации!"),
+          text: t("Проверьте подключение к Интернету."),
         });
       }
     }
@@ -94,7 +96,7 @@ export default function Client() {
 
   return (
     <Stack className="client">
-      <Typography variant="h1">Станьте Клиентом</Typography>
+      <Typography variant="h1">{t("Станьте Клиентом")}</Typography>
       <Stack className="client-frame">
         <Stack className="client-left">
           <iframe
@@ -108,7 +110,7 @@ export default function Client() {
         <Stack className={"client-right"}>
           <form action={"#"} method={"POST"} onSubmit={handleSubmit} noValidate>
             <div className={"client-input-box"}>
-              <label>Имя</label>
+              <label>{t("Имя")}</label>
               <input
                 type={"text"}
                 placeholder="John"
@@ -120,7 +122,7 @@ export default function Client() {
               />
             </div>
             <div className={"client-input-box"}>
-              <label>Номер телефона</label>
+              <label>{t("Номер телефона")}</label>
               <input
                 type="tel"
                 placeholder="+998 00 000 00 00"
@@ -130,7 +132,7 @@ export default function Client() {
               />
             </div>
             <div className={"client-input-box"}>
-              <label>Почта</label>
+              <label>{t("Почта")}</label>
               <input
                 type="email"
                 placeholder="john@email.com"
@@ -142,7 +144,7 @@ export default function Client() {
               />
             </div>
             <div className={"client-input-box"}>
-              <label>LinkedIn (необязательно)</label>
+              <label>{t("LinkedIn (необязательно)")}</label>
               <input
                 type="text"
                 placeholder="URL"
@@ -158,7 +160,7 @@ export default function Client() {
               className="client-btn"
               endIcon={<GoArrowRight className="arrowRight-icon" />}
             >
-              Отправить
+              {t("Отправить")}
             </Button>
           </form>
         </Stack>

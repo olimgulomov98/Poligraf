@@ -90,20 +90,43 @@
   color: #fff;
 }
 
+.navbar .navbar-container .navbar-right-frame .drawer-btn {
+  display: none;
+}
+
 @media (max-width: 450px) {
   .navbar {
-    height: 87px;
+    height: 82px;
   }
 
   .navbar .navbar-container {
     padding: 0 20px;
   }
 
-  .navbar .navbar-container .links {
+  .navbar .navbar-container .links,
+  .navbar .navbar-container .navbar-right-frame .navbar-btn {
     display: none;
   }
 
   .navbar .navbar-container .navbar-right-frame .navbar-lang {
     gap: 8px;
+  }
+
+  .css-197m481-MuiButtonBase-root-MuiMenuItem-root {
+    min-height: 38px !important;
+    height: auto !important;
+  }
+
+  .css-ktydn3-MuiButtonBase-root-MuiMenuItem-root {
+    min-height: 38px !important;
+    height: auto !important;
+  }
+
+  .navbar .navbar-container .navbar-right-frame .drawer-btn {
+    display: block;
+  }
+
+  .css-9tj150-MuiButton-endIcon > *:nth-of-type(1) {
+    font-size: 32px;
   }
 }
