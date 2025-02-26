@@ -156,7 +156,7 @@ export default function AboutPage() {
               {t("Создаём решения для счастья каждого.")}
             </Typography>
             <Box className={"box-img"}>
-              <img src="/img/namaste.png" alt="namaste" />
+              <img src="/icons/namaste.svg" alt="namaste" />
             </Box>
           </Box>
           <Box className={"box-frame"}>
@@ -165,7 +165,7 @@ export default function AboutPage() {
               {t("Стремление к совершенству в каждом элементе.")}
             </Typography>
             <Box className={"box-img"}>
-              <img src="/img/burn.png" alt="burn" />
+              <img src="/icons/burn.svg" alt="burn" />
             </Box>
           </Box>
           <Box className={"box-frame"}>
@@ -174,7 +174,7 @@ export default function AboutPage() {
               {t("Быстрые и эффективные решения для вашего успеха.")}
             </Typography>
             <Box className={"box-img"}>
-              <img src="/img/firecracke.png" alt="firecracke" />
+              <img src="/icons/firecracke.svg" alt="firecracke" />
             </Box>
           </Box>
         </Stack>

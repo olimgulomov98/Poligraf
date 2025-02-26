@@ -77,10 +77,10 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
         <Box sx={{ cursor: "pointer" }}>
           <a href="/">
             <img
-              src="/img/poligrafLogo.png"
+              src="/icons/blackPeLogo.svg"
               alt="poligrafLogo"
               width="104px"
-              height="56.75px"
+              height="57px"
             />
           </a>
         </Box>
@@ -202,15 +202,16 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
               }}
             >
               <Avatar
-                src="/icons/en-logo.jpg"
+                src="/icons/enLogo.svg"
                 alt="Русский"
                 variant="square"
                 sx={{
                   width: "30px",
-                  height: "30px",
+                  height: "18px",
+                  borderRadius: "3px",
                   "@media (max-width: 450px)": {
                     width: "18px",
-                    height: "14px",
+                    height: "12px",
                   },
                 }}
               />{" "}
@@ -233,7 +234,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
               }}
             >
               <Avatar
-                src="/icons/ru-logo.svg"
+                src="/icons/ruLogo.svg"
                 alt="Русский"
                 variant="square"
                 sx={{
@@ -262,7 +263,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
               }}
             >
               <Avatar
-                src="/icons/uz-logo.svg"
+                src="/icons/uzLogo.svg"
                 alt="Uzbek"
                 variant="square"
                 sx={{

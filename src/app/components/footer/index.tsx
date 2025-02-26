@@ -8,7 +8,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
   const socialLinks = {
     instagram: "https://www.instagram.com/poligrafextra?igsh=NzIza2NsMDRtMTVw",
     youtube: "https://youtube.com/@poligrafextra?si=3dXEdljY4CSsx09D",
-    telegram: "https://t.me/poligraf_extra",
+    telegram: "https://t.me/poligrafextra",
     facebook: "https://www.facebook.com/share/1BVycuU6ZY/?mibextid=wwXIfr",
   } as const;
 
@@ -21,7 +21,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
   return (
     <Stack className={"footer"}>
       <Box className={"footer-logo"}>
-        <img src="/img/poligrafLogo1.png" alt="" />
+        <img src="/icons/whitePeLogo.svg" alt="whitePeLogo" />
       </Box>
       <Stack className={"footer-frame"}>
         <Box>

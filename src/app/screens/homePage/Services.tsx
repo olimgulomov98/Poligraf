@@ -20,7 +20,7 @@ export default function Services() {
         <Box className={"box-frame"}>
           <Box className={"box-img"}>
             <img
-              src="/img/printer.png"
+              src="/icons/printer.svg"
               alt="printer"
               width={"40px"}
               height={"40px"}
@@ -43,7 +43,7 @@ export default function Services() {
         <Box className={"box-frame"}>
           <Box className={"box-img"}>
             <img
-              src="/img/colored-printer.png"
+              src="/icons/colored-printer.svg"
               alt="colored-printer"
               width={"40px"}
               height={"40px"}
@@ -67,7 +67,7 @@ export default function Services() {
           {" "}
           <Box className={"box-img"}>
             <img
-              src="/img/cutting-plotter.png"
+              src="/icons/cutting-plotter.svg"
               alt="cutting-plotter"
               width={"40px"}
               height={"40px"}
