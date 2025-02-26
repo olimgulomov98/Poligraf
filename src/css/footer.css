@@ -3,10 +3,16 @@
 .footer {
   width: 100%;
   height: 358px;
-  max-width: 1450px;
   background: #181818;
-  margin: 150px auto 0 auto;
   padding: 48px 111px;
+  margin-top: 150px;
+}
+
+.footer .footer-container {
+  width: 100%;
+  height: auto;
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
 .footer .footer-logo {

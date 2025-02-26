@@ -61,19 +61,13 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
 
   return (
     <Stack
-      className="navbar"
+      className={"navbar"}
       sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
         backgroundColor: "#fff !important",
       }}
     >
-      <Stack
-        className="navbar-container"
-        sx={{
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-          backgroundColor: "#fff !important",
-        }}
-      >
+      <Stack className="navbar-container">
         <Box sx={{ cursor: "pointer" }}>
           <a href="/">
             <img

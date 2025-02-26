@@ -11,7 +11,6 @@
   width: 100%;
   height: auto;
   padding: 0 79px;
-  margin-top: 120px;
 }
 
 .portfolio-page .portfolio-frame .title {
@@ -21,6 +20,7 @@
   line-height: 67.2px;
   text-align: center;
   color: #181818;
+  margin-top: 200px;
 }
 
 .portfolio-page .portfolio-frame .paragraph {
@@ -139,7 +139,7 @@
   height: auto;
   display: flex;
   justify-content: center;
-  margin: 140px 0;
+  margin: 237px 0 140px 0;
 }
 
 .portfolio-page .chosenPortfolio-frame .main-img img {
@@ -213,12 +213,12 @@
 @media (max-width: 450px) {
   .portfolio-page .portfolio-frame {
     padding: 0 20px;
-    margin-top: 50px;
   }
 
   .portfolio-page .portfolio-frame .title {
     font-size: 32px;
     line-height: 44.8px;
+    margin-top: 135px;
   }
 
   .portfolio-page .portfolio-frame .paragraph {
@@ -307,7 +307,7 @@
   /** ChosenPortfolio **/
 
   .portfolio-page .chosenPortfolio-frame .main-img {
-    margin: 56px 0;
+    margin: 138px 0 0 56px 0;
   }
 
   .portfolio-page .chosenPortfolio-frame .main-img img {
