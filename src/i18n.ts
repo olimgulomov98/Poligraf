@@ -2,12 +2,18 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+import enNavbar from "./assets/locales/en/navbarFooter.json";
 import ruNavbar from "./assets/locales/ru/navbarFooter.json";
 import uzNavbar from "./assets/locales/uz/navbarFooter.json";
+import enMain from "./assets/locales/en/main.json";
 import ruMain from "./assets/locales/ru/main.json";
 import uzMain from "./assets/locales/uz/main.json";
 
 const resources = {
+  En: {
+    navbarFooter: enNavbar,
+    main: enMain,
+  },
   Ru: {
     navbarFooter: ruNavbar,
     main: ruMain,
@@ -24,7 +30,7 @@ i18n
   .init({
     resources,
     fallbackLng: "Ru",
-    supportedLngs: ["Ru", "Uz"],
+    supportedLngs: ["En", "Ru", "Uz"],
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],

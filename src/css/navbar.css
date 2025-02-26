@@ -5,8 +5,9 @@
   height: 97px;
   max-width: 1450px;
   border-bottom: 1px solid #e8e8e8;
-  background: #fff;
+  background: #fff !important;
   margin: 0 auto;
+  z-index: 2000;
 }
 
 .navbar .navbar-container {
@@ -100,7 +101,8 @@
   }
 
   .navbar .navbar-container {
-    padding: 0 20px;
+    padding: 15px 20px 0 20px;
+    margin-top: 0;
   }
 
   .navbar .navbar-container .links,
@@ -109,7 +111,7 @@
   }
 
   .navbar .navbar-container .navbar-right-frame .navbar-lang {
-    gap: 8px;
+    margin-top: -5px;
   }
 
   .css-197m481-MuiButtonBase-root-MuiMenuItem-root {
@@ -124,6 +126,12 @@
 
   .navbar .navbar-container .navbar-right-frame .drawer-btn {
     display: block;
+  }
+
+  .navbar .navbar-container .navbar-right-frame .close-icon {
+    font-size: large;
+    width: 40px;
+    height: 40px;
   }
 
   .css-9tj150-MuiButton-endIcon > *:nth-of-type(1) {

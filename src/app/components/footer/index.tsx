@@ -4,6 +4,20 @@ import { useTranslation } from "react-i18next";
 
 export default function Footer({ openModal }: { openModal: () => void }) {
   const { t }: { t: (key: string) => string } = useTranslation("navbarFooter");
+
+  const socialLinks = {
+    instagram: "https://www.instagram.com/poligrafextra?igsh=NzIza2NsMDRtMTVw",
+    youtube: "https://youtube.com/@poligrafextra?si=3dXEdljY4CSsx09D",
+    telegram: "https://t.me/poligraf_extra",
+    facebook: "https://www.facebook.com/share/1BVycuU6ZY/?mibextid=wwXIfr",
+  } as const;
+
+  type SocialPlatform = keyof typeof socialLinks;
+
+  const handleRedirect = (platform: SocialPlatform) => {
+    window.open(socialLinks[platform], "_blank");
+  };
+
   return (
     <Stack className={"footer"}>
       <Box className={"footer-logo"}>
@@ -28,21 +42,26 @@ export default function Footer({ openModal }: { openModal: () => void }) {
         </Box>
         <Box>
           <Stack className={"footer-boxes"}>
-            <Box className={"footer-box"}>
-              <img src="/icons/instagram.svg" alt="instagram" />
-            </Box>
-            <Box className={"footer-box"}>
-              <img src="/icons/youtube.svg" alt="youtube" />
-            </Box>
-            <Box className={"footer-box"}>
-              <img src="/icons/telegram.svg" alt="telegram" />
-            </Box>
-            <Box className={"footer-box"}>
-              <img src="/icons/facebook.svg" alt="facebook" />
-            </Box>
+            {Object.entries(socialLinks).map(([platform, url]) => (
+              <Box
+                key={platform}
+                className={"footer-box"}
+                onClick={() => handleRedirect(platform as SocialPlatform)}
+                sx={{ cursor: "pointer" }}
+              >
+                <img src={`/icons/${platform}.svg`} alt={platform} />
+              </Box>
+            ))}
           </Stack>
 
-          <Typography variant="h2">+99890 552 50 50</Typography>
+          <Typography
+            variant="h2"
+            component="a"
+            href="tel:+998905525050"
+            className="footer-phone"
+          >
+            +99890 552 50 50
+          </Typography>
 
           <Box className={"email-frame"}>
             <img src="/icons/email.svg" alt="email" />

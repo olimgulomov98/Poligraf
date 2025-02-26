@@ -55,7 +55,7 @@ export default function Flex() {
 
       <Stack className={"boxes-container"}>
         <Stack className={"boxes-frame"}>
-          <Box className={"box-left"}>
+          <Box className={"box-left flex-first"}>
             <Box className={"box-img"}>
               <img src="/icons/oscillating-knife-cutting-machine.svg" alt="" />
             </Box>

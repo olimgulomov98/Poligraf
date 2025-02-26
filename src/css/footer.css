@@ -82,13 +82,15 @@
   justify-content: center;
 }
 
-.footer .footer-frame h2 {
+.footer .footer-frame .footer-phone {
   font-family: "Gilroy";
   font-size: 20px;
   font-weight: 600;
   line-height: 24.5px;
   color: #fff;
   margin: 24px 0 22px 55px;
+  text-decoration: none;
+  display: block;
 }
 
 .footer .footer-frame .email-frame {
@@ -147,7 +149,7 @@
     margin: 32px 0 0 0;
   }
 
-  .footer .footer-frame h2 {
+  .footer .footer-frame .footer-phone {
     margin: 12px 0;
   }
 }

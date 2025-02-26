@@ -291,6 +291,10 @@
     line-height: 22px;
   }
 
+  .services .printing .boxes-container .boxes-frame .flex-first h3 {
+    font-size: 17px !important;
+  }
+
   .services .printing .boxes-container .boxes-frame .box-right {
     width: 100%;
   }

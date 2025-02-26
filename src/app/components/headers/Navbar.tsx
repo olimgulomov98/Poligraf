@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Drawer,
-  IconButton,
   Menu,
   MenuItem,
   Stack,
@@ -14,6 +13,7 @@ import { GoArrowRight } from "react-icons/go";
 import { useTranslation } from "react-i18next";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import CloseIcon from "@mui/icons-material/Close";
+import { TbWorld } from "react-icons/tb";
 
 export default function Navbar({ openModal }: { openModal: () => void }) {
   const navigate = useNavigate();
@@ -26,12 +26,6 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
 
   const [navbarLangAnchorEl, setNavbarLangAnchorEl] =
     useState<null | HTMLElement>(null);
-  const [drawerLangAnchorEl, setDrawerLangAnchorEl] =
-    useState<null | HTMLElement>(null);
-
-  const [selectedLang, setSelectedLang] = useState<"Ru" | "Uz">(
-    i18n.language as "Ru" | "Uz"
-  );
 
   const [open, setOpen] = useState(false);
 
@@ -58,29 +52,37 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
     setNavbarLangAnchorEl(event.currentTarget);
   };
 
-  const openDrawerLanguageMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setDrawerLangAnchorEl(event.currentTarget);
-  };
-
-  const closeLanguageMenu = (lang?: "Ru" | "Uz") => {
+  const closeLanguageMenu = (lang?: "En" | "Ru" | "Uz") => {
     if (lang) {
       i18n.changeLanguage(lang);
-      setSelectedLang(lang);
     }
     setNavbarLangAnchorEl(null);
-    setDrawerLangAnchorEl(null);
   };
 
   return (
-    <Stack className="navbar">
-      <Stack className="navbar-container">
+    <Stack
+      className="navbar"
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: "#fff !important",
+      }}
+    >
+      <Stack
+        className="navbar-container"
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          backgroundColor: "#fff !important",
+        }}
+      >
         <Box sx={{ cursor: "pointer" }}>
-          <img
-            src="/img/poligrafLogo.png"
-            alt="poligrafLogo"
-            width="104px"
-            height="56.75px"
-          />
+          <a href="/">
+            <img
+              src="/img/poligrafLogo.png"
+              alt="poligrafLogo"
+              width="104px"
+              height="56.75px"
+            />
+          </a>
         </Box>
 
         <Stack className="links">
@@ -154,21 +156,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
 
         <Stack className="navbar-right-frame">
           <Box className="navbar-lang" onClick={openNavbarLanguageMenu}>
-            <Avatar
-              src={
-                selectedLang === "Ru"
-                  ? "/icons/ru-logo.svg"
-                  : "/icons/uz-logo.svg"
-              }
-              alt={selectedLang}
-              variant="square"
-              sx={{
-                width: "20px",
-                height: "20px",
-                marginRight: "5px",
-              }}
-            />
-            {selectedLang} <KeyboardArrowDownIcon fontSize="medium" />
+            <TbWorld fontSize={"30px"} />
           </Box>
 
           <Menu
@@ -178,7 +166,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
             sx={{
               "& .MuiPaper-root": {
                 width: "214px",
-                height: "112px",
+                height: "168px",
                 border: "1px solid #e8e8e8",
                 borderRadius: "8px",
                 boxShadow: "none",
@@ -186,7 +174,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
 
                 "@media (max-width: 450px)": {
                   width: "146px",
-                  height: "78px",
+                  height: "117px",
                   borderRadius: "5px",
                   marginTop: "5px",
                 },
@@ -197,6 +185,37 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
               },
             }}
           >
+            <MenuItem
+              onClick={() => closeLanguageMenu("En")}
+              sx={{
+                height: "56px",
+                borderBottom: "1px solid #e8e8e8",
+                columnGap: "10px",
+                fontWeight: 500,
+                fontSize: "20px",
+                "@media (max-width: 450px)": {
+                  height: "38px",
+                  fontSize: "13.64px",
+                  lineHeight: "16.55px",
+                },
+                "&:hover": { backgroundColor: "#f9f9f9" },
+              }}
+            >
+              <Avatar
+                src="/icons/en-logo.png"
+                alt="Русский"
+                variant="square"
+                sx={{
+                  width: "30px",
+                  height: "30px",
+                  "@media (max-width: 450px)": {
+                    width: "16px",
+                    height: "16px",
+                  },
+                }}
+              />{" "}
+              {t("Энг")}
+            </MenuItem>
             <MenuItem
               onClick={() => closeLanguageMenu("Ru")}
               sx={{
@@ -218,6 +237,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 alt="Русский"
                 variant="square"
                 sx={{
+                  width: "30px",
+                  height: "30px",
                   "@media (max-width: 450px)": {
                     width: "16px",
                     height: "16px",
@@ -245,6 +266,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 alt="Uzbek"
                 variant="square"
                 sx={{
+                  width: "30px",
+                  height: "30px",
                   "@media(max-width: 450px)": {
                     width: "16px",
                     height: "16px",
@@ -265,45 +288,37 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
           </Button>
 
           <Box>
-            <Box onClick={toggleDrawer(true)} className={"drawer-btn"}>
-              <img src="/icons/menu.svg" alt="menu" />
+            <Box onClick={toggleDrawer(!open)} className={"drawer-btn"}>
+              {open ? (
+                <CloseIcon className={"close-icon"} />
+              ) : (
+                <img src="/icons/menu.svg" alt="menu" />
+              )}
             </Box>
 
+            {/* Drawer */}
             <Drawer
-              anchor="left"
+              anchor="top"
               open={open}
               onClose={toggleDrawer(false)}
               sx={{
                 "& .MuiDrawer-paper": {
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "#fff",
+                  position: "absolute",
+                  top: "81px",
+                  left: 0,
+                  right: 0,
+                  height: "calc(100vh - 81px)",
+                  backgroundColor: "white",
                   padding: "20px",
-                  position: "relative",
+                  boxShadow: "none",
                 },
               }}
             >
-              <Box margin={"10px"}>
-                <img
-                  src="/img/poligrafLogo.png"
-                  alt="poligrafLogo"
-                  width="104px"
-                  height="56.75px"
-                />
-              </Box>
-
-              <IconButton
-                onClick={toggleDrawer(false)}
-                sx={{ position: "absolute", top: 28, right: 28 }}
-              >
-                <CloseIcon fontSize="large" />
-              </IconButton>
-
               <Box
                 sx={{
                   marginTop: "67px",
                   fontFamily: "Gilroy",
-                  fontSize: "32px",
+                  fontSize: "24px",
                   fontWeight: 500,
                   lineHeight: "38px",
                 }}
@@ -311,7 +326,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 <Box
                   sx={{
                     borderBottom: "1px solid #e8e8e8",
-                    paddingBottom: "24px",
+                    paddingBottom: "12px",
                   }}
                 >
                   <NavLink
@@ -323,7 +338,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   </NavLink>
                 </Box>
                 <Box
-                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "24px 0" }}
+                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "12px 0" }}
                 >
                   <NavLink
                     to="/portfolio"
@@ -335,7 +350,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 </Box>
 
                 <Box
-                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "24px 0" }}
+                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "12px 0" }}
                 >
                   <NavLink
                     to="/services/offset"
@@ -346,7 +361,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   </NavLink>
                 </Box>
                 <Box
-                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "24px 0" }}
+                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "12px 0" }}
                 >
                   <NavLink
                     to="/services/digital"
@@ -357,7 +372,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   </NavLink>
                 </Box>
                 <Box
-                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "24px 0" }}
+                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "12px 0" }}
                 >
                   <NavLink
                     to="/services/flex"
@@ -368,7 +383,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   </NavLink>
                 </Box>
                 <Box
-                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "24px 0" }}
+                  sx={{ borderBottom: "1px solid #e8e8e8", padding: "12px 0" }}
                 >
                   <NavLink
                     to="/about-us"
@@ -379,110 +394,32 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   </NavLink>
                 </Box>
 
-                <Box sx={{ position: "absolute", bottom: 30 }}>
-                  <Box
-                    onClick={openDrawerLanguageMenu}
-                    sx={{
-                      marginBottom: "30px",
-                      fontFamily: "Gilroy",
-                      fontSize: "32px",
-                      fontWeight: 500,
-                      lineHeight: "38px",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    {selectedLang} <KeyboardArrowDownIcon fontSize="large" />
-                  </Box>
-
-                  <Menu
-                    anchorEl={drawerLangAnchorEl}
-                    open={Boolean(drawerLangAnchorEl)}
-                    onClose={() => closeLanguageMenu()}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "center",
-                    }}
-                    transformOrigin={{
-                      vertical: "bottom",
-                      horizontal: "center",
-                    }}
-                    sx={{
-                      "& .MuiPaper-root": {
-                        width: "221px",
-                        height: "115px",
-                        border: "1px solid #e8e8e8",
-                        borderRadius: "8px",
-                        boxShadow: "none",
-                        marginLeft: "70px",
-                      },
-                      "& .MuiMenu-list": {
-                        paddingTop: "0px",
-                        paddingBottom: "0px",
-                      },
-                    }}
-                  >
-                    <MenuItem
-                      onClick={() => closeLanguageMenu("Ru")}
-                      sx={{
-                        height: "56px",
-                        borderBottom: "1px solid #e8e8e8",
-                        columnGap: "10px",
-                        fontWeight: 500,
-                        fontSize: "20px",
-                        "&:hover": { backgroundColor: "#f9f9f9" },
-                      }}
-                    >
-                      <Avatar
-                        src="/icons/ru-logo.svg"
-                        alt="Русский"
-                        variant="square"
-                      />{" "}
-                      {t("Рус")}
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => closeLanguageMenu("Uz")}
-                      sx={{
-                        height: "56px",
-                        columnGap: "10px",
-                        fontSize: "20px",
-                        "&:hover": { backgroundColor: "#f9f9f9" },
-                      }}
-                    >
-                      <Avatar
-                        src="/icons/uz-logo.svg"
-                        alt="Uzbek"
-                        variant="square"
-                      />{" "}
-                      {t("Узб")}
-                    </MenuItem>
-                  </Menu>
-
-                  <Button
-                    variant="contained"
-                    className="btn-2"
-                    endIcon={<GoArrowRight />}
-                    onClick={openModal}
-                    sx={{
-                      width: "257px",
-                      height: "63px",
-                      borderRadius: "12px",
-                      backgroundColor: "#181818",
-                      fontFamily: "Gilroy",
-                      fontSize: "32px",
-                      fontWeight: 500,
-                      lineHeight: "38px",
-                      color: "#fff",
-                      textDecoration: "none",
-                      textTransform: "none",
-                      "&:hover": { backgroundColor: "#181818" },
-                      "&:active": { backgroundColor: "#181818" },
-                      "&.Mui-focusVisible": { backgroundColor: "#181818" },
-                    }}
-                  >
-                    {t("Связаться")}
-                  </Button>
-                </Box>
+                <Button
+                  variant="contained"
+                  className="btn-2"
+                  endIcon={<GoArrowRight />}
+                  onClick={openModal}
+                  sx={{
+                    width: "200px",
+                    height: "55px",
+                    borderRadius: "12px",
+                    backgroundColor: "#181818",
+                    fontFamily: "Gilroy",
+                    fontSize: "26px",
+                    fontWeight: 500,
+                    lineHeight: "38px",
+                    color: "#fff",
+                    textDecoration: "none",
+                    textTransform: "none",
+                    position: "absolute",
+                    bottom: "50px",
+                    "&:hover": { backgroundColor: "#181818" },
+                    "&:active": { backgroundColor: "#181818" },
+                    "&.Mui-focusVisible": { backgroundColor: "#181818" },
+                  }}
+                >
+                  {t("Связаться")}
+                </Button>
               </Box>
             </Drawer>
           </Box>
