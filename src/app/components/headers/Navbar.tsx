@@ -174,7 +174,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
 
                 "@media (max-width: 450px)": {
                   width: "146px",
-                  height: "117px",
+                  height: "147px",
                   borderRadius: "5px",
                   marginTop: "5px",
                 },
@@ -194,23 +194,23 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 fontWeight: 500,
                 fontSize: "20px",
                 "@media (max-width: 450px)": {
-                  height: "38px",
-                  fontSize: "13.64px",
+                  height: "48px",
+                  fontSize: "16px",
                   lineHeight: "16.55px",
                 },
                 "&:hover": { backgroundColor: "#f9f9f9" },
               }}
             >
               <Avatar
-                src="/icons/en-logo.png"
+                src="/icons/en-logo.jpg"
                 alt="Русский"
                 variant="square"
                 sx={{
                   width: "30px",
                   height: "30px",
                   "@media (max-width: 450px)": {
-                    width: "16px",
-                    height: "16px",
+                    width: "18px",
+                    height: "14px",
                   },
                 }}
               />{" "}
@@ -225,8 +225,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 fontWeight: 500,
                 fontSize: "20px",
                 "@media (max-width: 450px)": {
-                  height: "38px",
-                  fontSize: "13.64px",
+                  height: "48px",
+                  fontSize: "16px",
                   lineHeight: "16.55px",
                 },
                 "&:hover": { backgroundColor: "#f9f9f9" },
@@ -240,8 +240,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   width: "30px",
                   height: "30px",
                   "@media (max-width: 450px)": {
-                    width: "16px",
-                    height: "16px",
+                    width: "18px",
+                    height: "18px",
                   },
                 }}
               />{" "}
@@ -254,8 +254,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                 columnGap: "10px",
                 fontSize: "20px",
                 "@media (max-width: 450px)": {
-                  height: "38px",
-                  fontSize: "13.64px",
+                  height: "48px",
+                  fontSize: "16px",
                   lineHeight: "16.55px",
                 },
                 "&:hover": { backgroundColor: "#f9f9f9" },
@@ -269,8 +269,8 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   width: "30px",
                   height: "30px",
                   "@media(max-width: 450px)": {
-                    width: "16px",
-                    height: "16px",
+                    width: "18px",
+                    height: "18px",
                   },
                 }}
               />{" "}
