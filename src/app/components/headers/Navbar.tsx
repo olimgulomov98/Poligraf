@@ -209,7 +209,7 @@ export default function Navbar({ openModal }: { openModal: () => void }) {
                   },
                 }}
               />{" "}
-              {t("Энг")}
+              {t("Анг")}
             </MenuItem>
             <MenuItem
               onClick={() => closeLanguageMenu("Ru")}

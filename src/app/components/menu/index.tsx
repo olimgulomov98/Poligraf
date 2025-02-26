@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Modal, Box, Button, Typography, Stack } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
 import { useTranslation } from "react-i18next";
-import SuccessModal from "./SuccessModal";
 import CloseIcon from "@mui/icons-material/Close";
+import Swal from "sweetalert2";
 
 export default function ContactModal({
   open,
@@ -26,8 +26,6 @@ export default function ContactModal({
   });
 
   const { t }: { t: (key: string) => string } = useTranslation("main");
-
-  const [success, setSuccess] = useState(false);
 
   const formatPhoneNumber = (value: string) => {
     const numbers = value.replace(/\D/g, ""); // Faqat raqamlarni saqlash
@@ -62,16 +60,13 @@ export default function ContactModal({
 
     if (validate()) {
       const cleanedPhone = formData.phone.replace(/\s+/g, "");
-
       const message = `📌 *Yangi Mijoz!* \n\n👤 *Ism:* ${formData.name}\n📞 *Telefon:* ${cleanedPhone}\n📧 *Email:* ${formData.email}\n🔗 *LinkedIn:* ${formData.linkedin}`;
-
       const botToken = "7465455715:AAEKOckH-IMRVu3xlMumd72ixAHKDJchqlE"; // O'zingizning bot tokeningizni kiriting
       const chatId = "-4792479785"; // O'zingizning chat_id yoki guruh_id ni kiriting
-
       const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
       try {
-        await fetch(telegramApiUrl, {
+        const response = await fetch(telegramApiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -81,11 +76,29 @@ export default function ContactModal({
           }),
         });
 
-        console.log("Ma'lumotlar Telegram botga yuborildi!");
-        setSuccess(true);
-        handleClose();
+        if (response.ok) {
+          Swal.fire({
+            icon: "success",
+            title: t("Данные отправлены!"),
+            text: t("Мы свяжемся с вами в ближайшее время."),
+            timer: 3000,
+            showConfirmButton: false,
+          });
+          handleClose();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: t("Произошла ошибка!"),
+            text: t("Попробуйте еще раз."),
+          });
+        }
       } catch (error) {
-        console.error("Telegram botga yuborishda xatolik:", error);
+        console.error("Xatolik:", error);
+        Swal.fire({
+          icon: "error",
+          title: t("Произошла ошибка при отправке информации!"),
+          text: t("Проверьте подключение к Интернету."),
+        });
       }
     }
   };
@@ -191,9 +204,6 @@ export default function ContactModal({
           </form>
         </Stack>
       </Modal>
-
-      {/* Yangi modal */}
-      <SuccessModal open={success} handleClose={() => setSuccess(false)} />
     </>
   );
 }

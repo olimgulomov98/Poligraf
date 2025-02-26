@@ -152,67 +152,7 @@
   color: #ff4747 !important;
 }
 
-/** Success Modal **/
-
-.success-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 761px;
-  height: 713px;
-  background: #fff;
-  box-shadow: 24;
-  border-radius: 24px;
-  position: relative;
-}
-
-.success-modal .close-btn {
-  position: absolute;
-  top: 56px;
-  right: 56px;
-  width: 48px;
-  height: 48px;
-  color: #181818;
-  cursor: pointer;
-}
-
-.success-modal .success-img {
-  width: 527px;
-  height: 530px;
-  margin: 0 auto 53px auto;
-}
-
-.success-modal .success-btn {
-  width: 182px;
-  height: 56px;
-  border-radius: 12px;
-  background: #181818;
-  color: #fff;
-  text-decoration: none;
-  text-transform: none;
-  box-shadow: none;
-  margin: 0 auto;
-  font-family: "Gilroy";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 29.4px;
-}
-
-.success-modal .success-btn:hover {
-  background: #181818;
-  box-shadow: none;
-}
-
-.success-modal .modal .arrowRight-icon {
-  width: 32px;
-  height: 32px;
-  color: #fff;
-}
-
 @media (max-width: 450px) {
-  /** Modal **/
-
   .modal {
     width: 90%;
     height: 366px;
@@ -292,46 +232,6 @@
   }
 
   .modal .arrowRight-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  /** Success Modal **/
-
-  .success-modal {
-    width: 90%;
-    height: 365px;
-    border-radius: 12px;
-  }
-
-  .success-modal .close-btn {
-    position: absolute;
-    top: 28px;
-    right: 28px;
-    width: 24px;
-    height: 24px;
-  }
-
-  .success-modal .success-img {
-    width: 270px;
-    height: 271px;
-    margin: 0 auto 26px auto;
-  }
-
-  .success-modal .success-img img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .success-modal .success-btn {
-    width: 112px;
-    height: 28px;
-    border-radius: 6px;
-    font-size: 12px;
-    line-height: 15px;
-  }
-
-  .success-modal .modal .arrowRight-icon {
     width: 16px;
     height: 16px;
   }

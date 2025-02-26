@@ -2,11 +2,10 @@ import { useState } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 import { GoArrowRight } from "react-icons/go";
 import { useTranslation } from "react-i18next";
-import SuccessModal from "../menu/SuccessModal";
+import Swal from "sweetalert2";
 
 export default function Client() {
   const { t }: { t: (key: string) => string } = useTranslation("main");
-  const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -70,12 +69,27 @@ export default function Client() {
         });
 
         if (response.ok) {
-          setSuccess(true);
+          Swal.fire({
+            icon: "success",
+            title: t("Данные отправлены!"),
+            text: t("Мы свяжемся с вами в ближайшее время."),
+            timer: 3000,
+            showConfirmButton: false,
+          });
         } else {
-          alert(t("Произошла ошибка! Попробуйте еще раз."));
+          Swal.fire({
+            icon: "error",
+            title: t("Произошла ошибка!"),
+            text: t("Попробуйте еще раз."),
+          });
         }
       } catch (error) {
         console.error("Xatolik:", error);
+        Swal.fire({
+          icon: "error",
+          title: t("Произошла ошибка при отправке информации!"),
+          text: t("Проверьте подключение к Интернету."),
+        });
       }
     }
   };
@@ -151,9 +165,6 @@ export default function Client() {
           </form>
         </Stack>
       </Stack>
-
-      {/* Yangi modal */}
-      <SuccessModal open={success} handleClose={() => setSuccess(false)} />
     </Stack>
   );
 }
