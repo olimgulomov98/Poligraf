@@ -74,10 +74,8 @@ export default function Footer() {
       const cleanedPhone = formData.phone.replace(/\s+/g, "");
       const message = `📌 *Yangi Mijoz!* \n\n👤 *Ism:* ${formData.name}\n📞 *Telefon:* ${cleanedPhone}\n📧 *Email:* ${formData.email}\n🔗 *LinkedIn:* ${formData.linkedin}`;
       const botToken = "7465455715:AAEKOckH-IMRVu3xlMumd72ixAHKDJchqlE"; // O'zingizning bot tokeningizni kiriting
-      const chatId = "152495758"; // O'zingizning chat_id yoki guruh_id ni kiriting
+      const chatId = "-4792479785"; // O'zingizning chat_id yoki guruh_id ni kiriting
       const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-      // const chatId = "-4792479785";
 
       try {
         const response = await fetch(telegramApiUrl, {
