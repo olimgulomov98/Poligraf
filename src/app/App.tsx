@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/headers/Navbar";
 import Footer from "./components/footer";
 import Client from "./components/client";
@@ -13,10 +13,21 @@ import "../css/footer.css";
 import "../css/client.css";
 import "../css/modal.css";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/portfolio/*" element={<PortfolioPage />} />
