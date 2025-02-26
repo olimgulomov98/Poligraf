@@ -69,6 +69,7 @@ export default function Client() {
         });
 
         if (response.ok) {
+          setFormData({ name: "", phone: "", email: "", linkedin: "" });
           Swal.fire({
             icon: "success",
             title: t("Данные отправлены!"),
