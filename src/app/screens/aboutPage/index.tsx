@@ -5,35 +5,8 @@ import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { portfolioItems } from "../../../assets/common";
 import "../../../css/about.css";
-
-const partnersItems = [
-  { img: "/img/vivo.png" },
-  { img: "/img/zikki.png" },
-  { img: "/img/adim.png" },
-  { img: "/img/zaminmix.png" },
-  { img: "/img/almaz.png" },
-  { img: "/img/dori.png" },
-  { img: "/img/arex.png" },
-  { img: "/img/atx.png" },
-  { img: "/img/best.png" },
-  { img: "/img/gtg.png" },
-  { img: "/img/ecomed.png" },
-  { img: "/img/ankalife.png" },
-  { img: "/img/assunna.png" },
-  { img: "/img/beylerbeyi.png" },
-  { img: "/img/hydroplast.png" },
-  { img: "/img/diyor.png" },
-  { img: "/img/artsoft.png" },
-  { img: "/img/andrologiya.png" },
-  { img: "/img/ayshe.png" },
-  { img: "/img/extrafds.png" },
-  { img: "/img/brooklyn.png" },
-  { img: "/img/almaz.png" },
-  { img: "/img/aisha.png" },
-  { img: "/img/yec-gilam.png" },
-  { img: "/img/fns.png" },
-];
 
 const faqs = [
   {
@@ -78,7 +51,7 @@ export default function AboutPage() {
   const [itemsPerPage, setItemsPerPage] = useState(25);
   const { t }: { t: (key: string) => string } = useTranslation("main");
 
-  const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
+  const totalPages = Math.ceil(portfolioItems.length / itemsPerPage);
 
   useEffect(() => {
     const updateItemsPerPage = () => {
@@ -185,7 +158,7 @@ export default function AboutPage() {
         <Typography variant="h1">{t("Партнёры")}</Typography>
 
         <Stack className="partners-frame">
-          {partnersItems
+          {portfolioItems
             .slice((page - 1) * itemsPerPage, page * itemsPerPage)
             .map((item, index) => (
               <Box className="box-frame" key={index}>

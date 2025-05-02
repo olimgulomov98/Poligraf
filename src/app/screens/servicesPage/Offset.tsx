@@ -1,44 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-const offsetItems = [
-  {
-    img: "/img/senupar.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/diazolin.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/atsiklovir.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/trexopal.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/karton-karobka6.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/karton-karobka4.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/karton-karobka3.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/karton-karobka5.png",
-    title: "Каробка, картон дизайн",
-  },
-  {
-    img: "/img/dustotolin.png",
-    title: "Каробка, картон дизайн",
-  },
-];
+import { offsetItems } from "../../../assets/common";
 
 export default function Offset() {
   const { t }: { t: (key: string) => string } = useTranslation("main");
@@ -163,7 +126,12 @@ export default function Offset() {
           {offsetItems.map((item, index) => (
             <Box className={"product-box"} key={index}>
               <Box className={"p-box-img"}>
-                <img src={item.img} alt={item.title} />
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  width={"100%"}
+                  height={"100%"}
+                />
               </Box>
               <Typography variant="h3">{t(item.title)}</Typography>
             </Box>

@@ -40,7 +40,7 @@ export default function ChosenPortfolio({
           {chosenItem.works?.map((item, index) => (
             <Box key={index}>
               <Box className={"box-img"}>
-                <img src={item.img} alt="" />
+                <img src={item.img} alt="" width={"100%"} height={"100%"} />
               </Box>
               <Typography variant="h3">{item.title}</Typography>
               <Typography variant="body2">{t(item.desc)}</Typography>

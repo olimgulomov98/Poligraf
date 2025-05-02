@@ -1,29 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { TbArrowNarrowLeft, TbArrowNarrowRight } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
+import { portfolioItems } from "../../../assets/common";
 
-const partnersItems = [
-  { img: "/img/vivo.png" },
-  { img: "/img/zikki.png" },
-  { img: "/img/adim.png" },
-  { img: "/img/zaminmix.png" },
-  { img: "/img/almaz.png" },
-  { img: "/img/dori.png" },
-  { img: "/img/arex.png" },
-  { img: "/img/atx.png" },
-  { img: "/img/best.png" },
-  { img: "/img/gtg.png" },
-  { img: "/img/gtg.png" },
-  { img: "/img/gtg.png" },
-];
-
-const itemsPerPage = 9;
-const totalPages = Math.ceil(partnersItems.length / itemsPerPage);
+// const itemsPerPage = 10;
+// const totalPages = Math.ceil(portfolioItems.length / itemsPerPage);
 
 export default function Partners() {
   const [page, setPage] = useState(1);
   const { t }: { t: (key: string) => string } = useTranslation("main");
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const totalPages = Math.ceil(portfolioItems.length / itemsPerPage);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth <= 450) {
+        setItemsPerPage(9);
+      } else {
+        setItemsPerPage(10);
+      }
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
 
   const handleNext = () => {
     if (page < totalPages) setPage(page + 1);
@@ -38,7 +41,7 @@ export default function Partners() {
       <Typography variant="h1">{t("Клиенты")}</Typography>
 
       <Stack className="partners-frame">
-        {partnersItems
+        {portfolioItems
           .slice((page - 1) * itemsPerPage, page * itemsPerPage)
           .map((item, index) => (
             <Box className="box-frame" key={index}>

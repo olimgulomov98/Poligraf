@@ -5,33 +5,33 @@ import { useNavigate } from "react-router-dom";
 
 const portfolioItems = [
   {
-    img: "/img/karton-karobka1.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/Asssunna-Ala-diabet.jpg",
+    title: "As sunna Ala diabet",
     desc: "Каробка, картон дизайн",
   },
   {
-    img: "/img/karton-karobka2.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/AREX-OTTOCENTO.jpg",
+    title: "Arex Ottocento",
     desc: "Каробка, картон дизайн",
   },
   {
-    img: "/img/karton-karobka3.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/AREX-TRAVERTIN.jpg",
+    title: "Arex Travertin",
     desc: "Каробка, картон дизайн",
   },
   {
-    img: "/img/karton-karobka4.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/Bos-Kos-Katalog.jpg",
+    title: "Bos-Kos Katalog",
     desc: "Каробка, картон дизайн",
   },
   {
-    img: "/img/karton-karobka5.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/Fazman-katta-sumka.jpg",
+    title: "Fazman katta sumka",
     desc: "Каробка, картон дизайн",
   },
   {
-    img: "/img/karton-karobka6.png",
-    title: "Spring Pharmaceutic",
+    img: "/img/products/Hydro-plast-sumka.jpg",
+    title: "Hydro plast sumka",
     desc: "Каробка, картон дизайн",
   },
 ];
@@ -57,7 +57,12 @@ export default function Portfolio() {
               {" "}
               <Box className={"portfolio-box"}>
                 <Box className={"p-box-img"}>
-                  <img src={item.img} alt={item.title} />
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    width={"100%"}
+                    height={"100%"}
+                  />
                 </Box>
                 <Typography variant="h3">{item.title}</Typography>
                 <Typography variant="body2">{t(item.desc)}</Typography>
