@@ -161,6 +161,13 @@ export const portfolioItems = [
     img: "/img/logolar/Saydana.svg",
     title: "Saydana",
     desc: "Каробка, картон дизайн",
+    works: [
+      {
+        img: "/img/products/flayer1.jpg",
+        title: "Flayer",
+        desc: "Каробка, картон дизайн",
+      },
+    ],
   },
   {
     id: 14,
