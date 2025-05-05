@@ -546,7 +546,7 @@ export default function Navbar() {
               variant="contained"
               className={"btn telegram"}
               onClick={() =>
-                window.open("https://t.me/poligrafextra", "_blank")
+                window.open("https://t.me/poligraf_extra", "_blank")
               }
             >
               <img src="/icons/telegram1.svg" alt="" />

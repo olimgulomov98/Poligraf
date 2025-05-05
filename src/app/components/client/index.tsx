@@ -101,11 +101,12 @@ export default function Client() {
       <Stack className="client-frame">
         <Stack className="client-left">
           <iframe
-            src="https://yandex.uz/map-widget/v1/?from=mapframe&ll=71.650331%2C41.014719&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0NTYzMTA0MTcxEjdPyrt6YmVraXN0b24sIE5hbWFuZ2FuLCBHb8q7emFsLCBLb3NvbnNveSBrb8q7Y2hhc2ksIDIyIgoN20yPQhVJDyRC&source=mapframe&um=constructor%3Ac67e88b6c96a4d4f97113d177a34a4a38f48f14245b4b4c42d05c15b94b0c345&utm_source=mapframe&z=18.1"
+            src="https://yandex.uz/map-widget/v1/?ll=71.644560%2C41.012456&z=18&l=map"
             width="100%"
             height="100%"
             frameBorder="0"
-            title="Yandex Map - 41.014926, 71.650112"
+            allowFullScreen={true}
+            title="Poligraf Extra"
           ></iframe>
         </Stack>
         <Stack className={"client-right"}>
