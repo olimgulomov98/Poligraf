@@ -160,10 +160,28 @@ export default function Footer() {
             <Typography
               variant="h2"
               component="a"
+              href="tel:+998781485050"
+              className="footer-phone"
+            >
+              +998 78-148-50-50
+            </Typography>
+
+            <Typography
+              variant="h2"
+              component="a"
+              href="tel:+998505525050"
+              className="footer-phone"
+            >
+              +998 50-552-50-50
+            </Typography>
+
+            <Typography
+              variant="h2"
+              component="a"
               href="tel:+998905525050"
               className="footer-phone"
             >
-              +99890 552 50 50
+              +998 90-552-50-50
             </Typography>
 
             <Box className={"email-frame"}>

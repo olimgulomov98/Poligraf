@@ -75,7 +75,7 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
-  margin-left: 50px;
+  margin: 0 0 15px 50px;
 }
 
 .footer .footer-frame .footer-boxes .footer-box {
@@ -89,11 +89,11 @@
 
 .footer .footer-frame .footer-phone {
   font-family: "Gilroy";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 24.5px;
+  line-height: 22.5px;
   color: #fff;
-  margin: 24px 0 22px 55px;
+  margin-left: 55px;
   text-decoration: none;
   display: block;
 }
@@ -102,6 +102,7 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
+  margin-top: 15px;
 }
 
 .footer .footer-frame .email-frame h5 {
@@ -151,10 +152,12 @@
   }
 
   .footer .footer-frame .footer-boxes {
-    margin: 32px 0 0 0;
+    margin: 32px 0 10px 0;
   }
 
   .footer .footer-frame .footer-phone {
-    margin: 12px 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 20.5px;
   }
 }
